@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>نافكو للألمنيوم</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -35,43 +38,48 @@
 
     <div class="hero-content">
         <div class="hero-text active">
-            <p class="hero-eyebrow">الشركة الأهلية للألمنيوم نافكو</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>الشركة الأهلية للألمنيوم نافكو</p>
             <h1 class="hero-title">نصمم أنظمة الألمنيوم المعقدة<br>لعالم يتطلب الدقة</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">57 عامًا من الحرفية</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>57 عامًا من الحرفية</p>
             <h1 class="hero-title">سبعة مصانع.<br>معيار هندسي واحد.</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">هندسة موثّقة</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>هندسة موثّقة</p>
             <h1 class="hero-title">كل نظام واجهة زجاجية<br>يُختبر قبل أن يُعتمد</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">داخل نافكو</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>داخل نافكو</p>
             <h1 class="hero-title">الدقة في كل<br>مرحلة من الإنتاج</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">مشاريع بارزة</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>مشاريع بارزة</p>
             <h1 class="hero-title">بُنيت لأبرز أفق<br>في السعودية</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">أكثر من 1,300 متخصص</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>أكثر من 1,300 متخصص</p>
             <h1 class="hero-title">حرفية تقف خلف<br>كل قطاع</h1>
         </div>
     </div>
 
-    <div class="hero-dots">
-        <button class="hero-dot active" aria-label="الشريحة 1"></button>
-        <button class="hero-dot" aria-label="الشريحة 2"></button>
-        <button class="hero-dot" aria-label="الشريحة 3"></button>
-        <button class="hero-dot" aria-label="الشريحة 4"></button>
-        <button class="hero-dot" aria-label="الشريحة 5"></button>
-        <button class="hero-dot" aria-label="الشريحة 6"></button>
+    <div class="hero-progress">
+        <button class="hero-progress-bar active" aria-label="الشريحة 1"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="الشريحة 2"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="الشريحة 3"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="الشريحة 4"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="الشريحة 5"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="الشريحة 6"><span class="hero-progress-fill"></span></button>
     </div>
+
+    <a href="#vision-section" class="hero-scroll-cue" aria-label="انتقل إلى المحتوى">
+        <span class="hero-scroll-cue-line"></span>
+        <svg class="hero-scroll-cue-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
 </header>
 
 <!-- ============ VISION ============ -->
-<section class="vision">
+<section class="vision" id="vision-section">
     <div class="vision-text-col">
         <div class="vision-label">الرؤية</div>
         <p class="vision-text">

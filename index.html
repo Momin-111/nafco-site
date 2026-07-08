@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>NAFCO Aluminium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -35,43 +38,48 @@
 
     <div class="hero-content">
         <div class="hero-text active">
-            <p class="hero-eyebrow">National Aluminium Factory Co. NAFCO</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>National Aluminium Factory Co. NAFCO</p>
             <h1 class="hero-title">Engineering Complex Aluminium Systems<br>for a Demanding World</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">57 Years of Craftsmanship</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>57 Years of Craftsmanship</p>
             <h1 class="hero-title">Seven Factories.<br>One Engineering Standard.</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">Engineering Verified</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Engineering Verified</p>
             <h1 class="hero-title">Every Facade System,<br>Tested Before It's Trusted</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">Inside NAFCO</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Inside NAFCO</p>
             <h1 class="hero-title">Precision at Every<br>Stage of Production</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">Landmark Projects</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Landmark Projects</p>
             <h1 class="hero-title">Built for Saudi Arabia's<br>Most Iconic Skylines</h1>
         </div>
         <div class="hero-text">
-            <p class="hero-eyebrow">1,300+ Specialists</p>
+            <p class="hero-eyebrow"><span class="hero-eyebrow-line"></span>1,300+ Specialists</p>
             <h1 class="hero-title">Craftsmanship Behind<br>Every Profile</h1>
         </div>
     </div>
 
-    <div class="hero-dots">
-        <button class="hero-dot active" aria-label="Phrase 1"></button>
-        <button class="hero-dot" aria-label="Phrase 2"></button>
-        <button class="hero-dot" aria-label="Phrase 3"></button>
-        <button class="hero-dot" aria-label="Phrase 4"></button>
-        <button class="hero-dot" aria-label="Phrase 5"></button>
-        <button class="hero-dot" aria-label="Phrase 6"></button>
+    <div class="hero-progress">
+        <button class="hero-progress-bar active" aria-label="Phrase 1"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="Phrase 2"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="Phrase 3"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="Phrase 4"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="Phrase 5"><span class="hero-progress-fill"></span></button>
+        <button class="hero-progress-bar" aria-label="Phrase 6"><span class="hero-progress-fill"></span></button>
     </div>
+
+    <a href="#vision-section" class="hero-scroll-cue" aria-label="Scroll to content">
+        <span class="hero-scroll-cue-line"></span>
+        <svg class="hero-scroll-cue-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
 </header>
 
 <!-- ============ VISION ============ -->
-<section class="vision">
+<section class="vision" id="vision-section">
     <div class="vision-text-col">
         <div class="vision-label">Vision</div>
         <p class="vision-text">
