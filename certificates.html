@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Certificates NAFCO Aluminium</title>
     <link rel="stylesheet" href="css/style.css">
@@ -96,7 +96,7 @@
     <div class="certs-grid">
 
         <div class="cert-card">
-            <div class="cert-card-img-wrap" onclick="openLightbox('images/iso-certificate.png','ISO 9001:2015 Certificate')">
+            <div class="cert-card-img-wrap" data-lightbox-src="images/iso-certificate.png" data-lightbox-caption="ISO 9001:2015 Certificate">
                 <img src="images/iso-certificate.png" alt="ISO 9001:2015" class="cert-card-img">
                 <div class="cert-zoom-hint">
                     <svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/><line x1="10.5" y1="10.5" x2="14" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="7" y1="5" x2="7" y2="9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="5" y1="7" x2="9" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
@@ -113,7 +113,7 @@
         </div>
 
         <div class="cert-card">
-            <div class="cert-card-img-wrap" onclick="openLightbox('images/audit-report-page1.png','Re-Audit Report Page 1')">
+            <div class="cert-card-img-wrap" data-lightbox-src="images/audit-report-page1.png" data-lightbox-caption="Re-Audit Report Page 1">
                 <img src="images/audit-report-page1.png" alt="Re-Audit Report" class="cert-card-img">
                 <div class="cert-zoom-hint">
                     <svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/><line x1="10.5" y1="10.5" x2="14" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="7" y1="5" x2="7" y2="9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="5" y1="7" x2="9" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
@@ -132,8 +132,8 @@
     </div>
 </div>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-    <button class="lightbox-close" onclick="closeLightbox()">
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <img class="lightbox-img" id="lightbox-img" src="" alt="">
@@ -158,21 +158,7 @@
     <div class="footer-credit">Developed by Momin Abutayeh</div>
 </footer>
 
-<script>
-    function openLightbox(src, caption) {
-        var lb = document.getElementById('lightbox');
-        document.getElementById('lightbox-img').src = src;
-        document.getElementById('lightbox-caption').textContent = caption + '  Click anywhere outside to close';
-        lb.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox(e) {
-        if (e && e.target === document.getElementById('lightbox-img')) return;
-        document.getElementById('lightbox').classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
-</script>
+<script src="js/certificates.js"></script>
 
 <script src="js/animations.js"></script>
 </body>

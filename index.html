@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>NAFCO Aluminium</title>
     <link rel="stylesheet" href="css/style.css">
@@ -61,12 +61,12 @@
     </div>
 
     <div class="hero-dots">
-        <button class="hero-dot active" onclick="goToHeroSlide(0)" aria-label="Phrase 1"></button>
-        <button class="hero-dot" onclick="goToHeroSlide(1)" aria-label="Phrase 2"></button>
-        <button class="hero-dot" onclick="goToHeroSlide(2)" aria-label="Phrase 3"></button>
-        <button class="hero-dot" onclick="goToHeroSlide(3)" aria-label="Phrase 4"></button>
-        <button class="hero-dot" onclick="goToHeroSlide(4)" aria-label="Phrase 5"></button>
-        <button class="hero-dot" onclick="goToHeroSlide(5)" aria-label="Phrase 6"></button>
+        <button class="hero-dot active" aria-label="Phrase 1"></button>
+        <button class="hero-dot" aria-label="Phrase 2"></button>
+        <button class="hero-dot" aria-label="Phrase 3"></button>
+        <button class="hero-dot" aria-label="Phrase 4"></button>
+        <button class="hero-dot" aria-label="Phrase 5"></button>
+        <button class="hero-dot" aria-label="Phrase 6"></button>
     </div>
 </header>
 
@@ -255,42 +255,42 @@
     <div class="partners-grid">
         <div class="partner-card">
             <div class="partner-logo-wrap">
-                <img src="images/partner-technal.png" alt="Technal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <img src="images/partner-technal.png" alt="Technal">
                 <div class="partner-name-fallback">Technal</div>
             </div>
             <div class="partner-category">Aluminium Systems</div>
         </div>
         <div class="partner-card">
             <div class="partner-logo-wrap">
-                <img src="images/partner-schuco.png" alt="Schuco" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <img src="images/partner-schuco.png" alt="Schuco">
                 <div class="partner-name-fallback">Sch&uuml;co</div>
             </div>
             <div class="partner-category">Aluminium Systems</div>
         </div>
         <div class="partner-card">
             <div class="partner-logo-wrap">
-                <img src="images/partner-efp.png" alt="EFP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <img src="images/partner-efp.png" alt="EFP">
                 <div class="partner-name-fallback">EFP</div>
             </div>
             <div class="partner-category">European Facade Products</div>
         </div>
         <div class="partner-card">
             <div class="partner-logo-wrap">
-                <img src="images/partner-dorma.png" alt="Dorma" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <img src="images/partner-dorma.png" alt="Dorma">
                 <div class="partner-name-fallback">Dorma</div>
             </div>
             <div class="partner-category">Door Accessories</div>
         </div>
         <div class="partner-card">
             <div class="partner-logo-wrap">
-                <img src="images/partner-hilti.png" alt="Hilti" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <img src="images/partner-hilti.png" alt="Hilti">
                 <div class="partner-name-fallback">Hilti</div>
             </div>
             <div class="partner-category">Anchor Systems</div>
         </div>
         <div class="partner-card">
             <div class="partner-logo-wrap">
-                <img src="images/partner-savio.png" alt="Savio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <img src="images/partner-savio.png" alt="Savio">
                 <div class="partner-name-fallback">Savio</div>
             </div>
             <div class="partner-category">Handles &amp; Fittings</div>
@@ -332,7 +332,7 @@
             <div class="footer-map-frame">
                 <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near"
                         width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="NAFCO location on Google Maps">
+                        referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" title="NAFCO location on Google Maps">
                 </iframe>
             </div>
         </div>
@@ -361,76 +361,7 @@
     <div class="footer-credit">Developed by Momin Abutayeh</div>
 </footer>
 
-<script>
-    (function () {
-        var svg = document.getElementById('world-map');
-        if (!svg) return;
-        var W = 1000, H = 460;
-        function project(lon, lat) { return [(lon + 180) / 360 * W, (90 - lat) / 180 * H]; }
-        function ringToD(ring) {
-            return ring.map(function(pt, i) {
-                var p = project(pt[0], pt[1]);
-                return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1);
-            }).join(' ') + 'Z';
-        }
-        function geoToD(geometry) {
-            if (!geometry) return '';
-            var parts = [];
-            if (geometry.type === 'Polygon') {
-                geometry.coordinates.forEach(function(r) { parts.push(ringToD(r)); });
-            } else if (geometry.type === 'MultiPolygon') {
-                geometry.coordinates.forEach(function(p) { p.forEach(function(r) { parts.push(ringToD(r)); }); });
-            }
-            return parts.join(' ');
-        }
-        fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                data.features.forEach(function(f) {
-                    var name = f.properties.ADMIN || f.properties.name || '';
-                    var d = geoToD(f.geometry);
-                    if (!d) return;
-                    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                    path.setAttribute('d', d);
-                    path.setAttribute('fill', name === 'Saudi Arabia' ? '#9b1c2e' : '#d7d9dc');
-                    path.setAttribute('stroke', '#f7f7f6');
-                    path.setAttribute('stroke-width', '0.4');
-                    svg.appendChild(path);
-                });
-            })
-            .catch(function() {
-                svg.innerHTML = '<rect width="1000" height="460" fill="#e8ecf0" rx="6"/>';
-            });
-    })();
-
-    (function () {
-        var texts = document.querySelectorAll('.hero-text');
-        var dots = document.querySelectorAll('.hero-dot');
-        var total = texts.length;
-        var current = 0;
-        var timer = null;
-
-        function showHeroSlide(i) {
-            texts.forEach(function (t, idx) { t.classList.toggle('active', idx === i); });
-            dots.forEach(function (d, idx) { d.classList.toggle('active', idx === i); });
-            current = i;
-        }
-
-        function nextHeroSlide() { showHeroSlide((current + 1) % total); }
-
-        function startHeroTimer() {
-            timer = setInterval(nextHeroSlide, 5000);
-        }
-
-        window.goToHeroSlide = function (i) {
-            showHeroSlide(i);
-            clearInterval(timer);
-            startHeroTimer();
-        };
-
-        if (total > 0) startHeroTimer();
-    })();
-</script>
+<script src="js/home.js"></script>
 <script src="js/animations.js"></script>
 </body>
 </html>

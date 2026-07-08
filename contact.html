@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contact Us NAFCO Aluminium</title>
   <link rel="stylesheet" href="css/style.css">
@@ -103,7 +103,7 @@
       <div class="form-card-title">Send us a message</div>
       <div class="form-card-sub">Fill in the details below and one of our specialists will be in touch.</div>
 
-      <form id="contact-form" action="mailto:sales@alunafco.com" method="POST" enctype="text/plain" onsubmit="handleSubmit(event)">
+      <form id="contact-form" action="mailto:sales@alunafco.com" method="POST" enctype="text/plain">
 
         <div class="form-row">
           <div class="form-group">
@@ -170,7 +170,7 @@
         <iframe
                 src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near"
                 allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
                 title="NAFCO location">
         </iframe>
       </div>
@@ -224,7 +224,7 @@
         <p class="footer-brand-name">National Aluminium Factory Co.</p>
       </div>
       <div class="footer-map-frame">
-        <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NAFCO location"></iframe>
+        <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" title="NAFCO location"></iframe>
       </div>
     </div>
     <div class="footer-info-col">
@@ -239,32 +239,7 @@
   <div class="footer-credit">Developed by Momin Abutayeh</div>
 </footer>
 
-<script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    var form = document.getElementById('contact-form');
-    var success = document.getElementById('form-success');
-    var data = new FormData(form);
-    var name = data.get('name');
-    var email = data.get('email');
-    var phone = data.get('phone');
-    var company = data.get('company') || 'N/A';
-    var type = data.get('project_type') || 'N/A';
-    var message = data.get('message');
-    var subject = encodeURIComponent('Project Inquiry from ' + name + ' NAFCO Website');
-    var body = encodeURIComponent(
-            'Name: ' + name + '\n' +
-            'Company: ' + company + '\n' +
-            'Phone: ' + phone + '\n' +
-            'Email: ' + email + '\n' +
-            'Project Type: ' + type + '\n\n' +
-            'Message:\n' + message
-    );
-    window.location.href = 'mailto:sales@alunafco.com?subject=' + subject + '&body=' + body;
-    form.style.display = 'none';
-    success.style.display = 'block';
-  }
-</script>
+<script src="js/contact.js"></script>
 
 <script src="js/animations.js"></script>
 </body>
