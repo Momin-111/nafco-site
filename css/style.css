@@ -376,9 +376,9 @@ ul { list-style: none; }
 .world-dots { width: 100%; max-width: 720px; height: auto; }
 
 @media (max-width: 900px) {
-  .vision { grid-template-columns: 1fr; padding: 50px 30px; }
+  .vision { grid-template-columns: 1fr; padding: 50px 30px; gap: 36px; }
   .vision-text { font-size: 20px; }
-  .vision-map-col { display: none; }
+  .vision-text-col { max-width: none; }
 }
 
 /* ============ 3 FEATURE CARDS ============ */
