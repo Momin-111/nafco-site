@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن نافكو للألمنيوم</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nav { position: fixed; background: #1c2530; border-bottom-color: rgba(255,255,255,0.1); }
+        .page-hero { background: #1c2530; padding: 160px 60px 80px; position: relative; overflow: hidden; }
+        .page-hero::after { content: ''; position: absolute; inset: 0; background: url('images/hero-1.jpg') center/cover no-repeat; opacity: 0.08; z-index: 0; }
+        .page-hero-inner { position: relative; z-index: 1; max-width: 760px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.45); font-size: 13px; font-weight: 600; text-decoration: none; margin-bottom: 28px; transition: color 0.2s; }
+        .back-link:hover { color: #fff; }
+        .back-link svg { width: 15px; height: 15px; }
+        .page-hero-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 14px; }
+        .page-hero-title { font-size: 42px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+        .page-hero-sub { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.9; max-width: 580px; }
+        .stats-band { background: #9b1c2e; padding: 50px 60px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+        .stat-item { border-right: 2px solid rgba(255,255,255,0.2); padding-right: 1.5rem; }
+        .stat-number { font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 0.4rem; }
+        .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); font-weight: 500; line-height: 1.5; }
+        .about-section { background: #ffffff; padding: 90px 60px; }
+        .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 16px; }
+        .about-title { font-size: 1.9rem; font-weight: 700; color: #1c2530; line-height: 1.4; margin-bottom: 1.5rem; }
+        .about-text { font-size: 0.95rem; color: #555; line-height: 2; margin-bottom: 1rem; }
+        .about-img-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.15); aspect-ratio: 4/3; }
+        .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .about-img-wrap:hover img { transform: scale(1.04); }
+        .capabilities { background: #f7f7f6; padding: 90px 60px; }
+        .capabilities-inner { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; max-width: 640px; margin: 0 auto 4rem; }
+        .section-header .about-label { display: block; }
+        .section-header .about-title { font-size: 1.7rem; }
+        .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .cap-card { background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid #eee; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .cap-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+        .cap-icon { width: 48px; height: 48px; background: rgba(155,28,46,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+        .cap-icon svg { width: 24px; height: 24px; color: #9b1c2e; }
+        .cap-title { font-size: 1rem; font-weight: 700; color: #1c2530; margin-bottom: 0.5rem; }
+        .cap-text { font-size: 0.85rem; color: #777; line-height: 1.8; }
+        .projects-wall { background: #1c2530; padding: 90px 60px; }
+        .projects-wall-inner { max-width: 1100px; margin: 0 auto; }
+        .pw-header { margin-bottom: 3rem; }
+        .pw-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+        .pw-title { font-size: 1.7rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+        .pw-sub { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.8; max-width: 560px; }
+        .pw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 12px; overflow: hidden; }
+        .pw-item { background: #1c2530; padding: 1.5rem 1.75rem; transition: background 0.2s; }
+        .pw-item:hover { background: rgba(155,28,46,0.15); }
+        .pw-item-dot { width: 6px; height: 6px; border-radius: 50%; background: #9b1c2e; margin-bottom: 0.75rem; }
+        .pw-item-name { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.5; }
+        .pw-item-type { font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 4px; }
+        .development { background: #fff; padding: 90px 60px; }
+        .dev-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; align-items: start; }
+        .dev-sticky { position: sticky; top: 120px; }
+        .dev-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 16px; }
+        .dev-title { font-size: 1.7rem; font-weight: 700; color: #1c2530; line-height: 1.4; margin-bottom: 1rem; }
+        .dev-text { font-size: 0.9rem; color: #666; line-height: 1.9; }
+        .dev-list { display: flex; flex-direction: column; gap: 1rem; }
+        .dev-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.5rem; border-radius: 10px; border: 1px solid #eee; transition: border-color 0.2s, box-shadow 0.2s; }
+        .dev-item:hover { border-color: #9b1c2e; box-shadow: 0 4px 16px rgba(155,28,46,0.08); }
+        .dev-num { font-size: 1.4rem; font-weight: 800; color: rgba(155,28,46,0.2); line-height: 1; flex-shrink: 0; width: 32px; }
+        .dev-item-title { font-size: 0.92rem; font-weight: 700; color: #1c2530; margin-bottom: 4px; }
+        .dev-item-text { font-size: 0.83rem; color: #777; line-height: 1.7; }
+        .location-band { background: #f7f7f6; padding: 90px 60px; }
+        .location-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .location-map { border-radius: 14px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.12); height: 340px; }
+        .location-map iframe { width: 100%; height: 100%; border: none; display: block; }
+        @media (max-width: 900px) {
+            .page-hero { padding: 120px 30px 60px; }
+            .page-hero-title { font-size: 28px; }
+            .stats-band { padding: 40px 30px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .about-section, .capabilities, .projects-wall, .development, .location-band { padding: 60px 30px; }
+            .about-inner, .dev-inner, .location-inner { grid-template-columns: 1fr; gap: 40px; }
+            .cap-grid { grid-template-columns: 1fr; }
+            .pw-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 560px) {
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .pw-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<nav class="nav">
+    <a href="index-ar.html" class="logo-wrap">
+        <span class="logo-circle"><img src="images/logo.jpg" alt="شعار نافكو"></span>
+        <span class="logo-name">نافكو</span>
+    </a>
+    <ul class="navlinks">
+        <li><a href="index-ar.html">الرئيسية</a></li>
+        <li><a href="about-ar.html" style="border-bottom:2px solid #9b1c2e;padding-bottom:3px;">من نحن</a></li>
+        <li><a href="projects-ar.html">مشاريعنا</a></li>
+        <li><a href="certificates-ar.html">الشهادات</a></li>
+        <li><a href="products-ar.html">المنتجات والخدمات المتخصصة</a></li>
+        <li><a href="contact-ar.html">تواصل معنا</a></li>
+        <li><a href="about.html">English</a></li>
+    </ul>
+</nav>
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <a href="index-ar.html" class="back-link">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            الرجوع للرئيسية
+        </a>
+        <p class="page-hero-label">من نحن</p>
+        <h1 class="page-hero-title">نهندس أعقد أعمال الألمنيوم<br>في المملكة العربية السعودية</h1>
+        <p class="page-hero-sub">
+            منذ عام 1971، وشركة نافكو تساهم في بناء أفق المملكة
+            من الأبراج الشاهقة والمستشفيات البارزة إلى بنية مترو الأنفاق
+            والضيافة الفاخرة. 57 عامًا من الهندسة المعقدة،
+            نقدمها من سبعة مصانع متخصصة في الرياض.
+        </p>
+    </div>
+</div>
+<div class="stats-band">
+    <div class="stats-grid">
+        <div class="stat-item"><div class="stat-number">+57</div><div class="stat-label">عامًا من الخبرة في هندسة الألمنيوم</div></div>
+        <div class="stat-item"><div class="stat-number">7</div><div class="stat-label">مصانع متخصصة ومتكاملة</div></div>
+        <div class="stat-item"><div class="stat-number">+1,300</div><div class="stat-label">مهندس ومتخصص ماهر</div></div>
+        <div class="stat-item"><div class="stat-number">1971</div><div class="stat-label">تأسست في المدينة الصناعية الثانية بالرياض</div></div>
+    </div>
+</div>
+<section class="about-section">
+    <div class="about-inner">
+        <div>
+            <p class="about-label">قصتنا</p>
+            <h2 class="about-title">نصف قرن من هندسة الألمنيوم في المملكة</h2>
+            <p class="about-text">تأسست الشركة الأهلية للألمنيوم نافكو عام 1971 في المدينة الصناعية الثانية بالرياض. وما بدأ كمصنّع إقليمي تحوّل إلى واحدة من أبرز القوى في المملكة بمجالات تصنيع الألمنيوم والمطابخ وطلاء المعادن.</p>
+            <p class="about-text">اليوم، تشغّل نافكو سبعة مصانع متخصصة ومتكاملة بالكامل، توظّف أكثر من 1,300 مهندس وفني ومتخصص ماهر. يجلب فريقنا عقودًا من الخبرة العملية لكل مشروع من الواجهات الزجاجية الدقيقة والواجهات الإنشائية إلى تكسية الأبراج الشاهقة وأنظمة الألمنيوم المعقدة التي تحدد ملامح أفق السعودية الحديث.</p>
+            <p class="about-text">بجذور راسخة في المشهد الصناعي بالرياض وسجل مثبت عبر أكثر مشاريع البنية التحتية طموحًا بالمملكة، تقف نافكو كشريك موثوق للعملاء الذين يتطلبون أداءً هندسيًا عاليًا في المشاريع المعقدة تقنيًا.</p>
+        </div>
+        <div class="about-img-wrap"><img src="images/quality-control.jpg" alt="عمليات مصنع نافكو"></div>
+    </div>
+</section>
+<section class="capabilities">
+    <div class="capabilities-inner">
+        <div class="section-header">
+            <span class="about-label">ماذا نقدم</span>
+            <h2 class="about-title">سبعة مصانع، قدرة واحدة متكاملة</h2>
+        </div>
+        <div class="cap-grid">
+            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20V8l8-5 8 5v12"/><rect x="9" y="13" width="6" height="7"/></svg></div><div class="cap-title">بثق الألمنيوم</div><div class="cap-text">قطاعات مخصصة تُبثق وفق مواصفات إنشائية ومعمارية دقيقة، باستخدام أنظمة ألمنيوم أوروبية معتمدة من الأسواق العالمية.</div></div>
+            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 014 0v2"/></svg></div><div class="cap-title">أنظمة الواجهات والواجهات الزجاجية</div><div class="cap-text">أنظمة واجهات عالية الأداء للأبراج والمباني البارزة، تشمل الواجهات الزجاجية الموحدة والتكسية وتجميعات الزجاج عالية التقنية.</div></div>
+            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="cap-title">تصنيع الأبواب والنوافذ</div><div class="cap-text">أنظمة أبواب ونوافذ ألمنيوم مصنّعة بدقة للمجمعات السكنية والأبراج التجارية ومشاريع الضيافة عبر أنحاء المملكة.</div></div>
+            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div><div class="cap-title">الطلاء بالبودرة والأنودة</div><div class="cap-text">خدمات تشطيب صناعي بمصانع طلاء موسّعة ومزوّدة بأفران جديدة تدعم كامل نطاق أنظمة الطلاء الحديثة بالسوق.</div></div>
+            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h7"/><circle cx="17" cy="18" r="3"/><path d="M17 15v3l2 1"/></svg></div><div class="cap-title">تصنيع المطابخ</div><div class="cap-text">أنظمة مطابخ ألمنيوم كاملة لمشاريع سكنية وضيافة واسعة النطاق، مع أسواق تصدير نشطة تتجاوز المملكة العربية السعودية.</div></div>
+            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="cap-title">إدارة الجودة</div><div class="cap-text">معتمدة بشهادة ISO 9001:2015 لتصميم وتصنيع وتجميع وتركيب أعمال الواجهات، مع إعادة تدقيق مستقلة عام 2026 دون أي إجراء تصحيحي.</div></div>
+        </div>
+    </div>
+</section>
+<section class="projects-wall">
+    <div class="projects-wall-inner">
+        <div class="pw-header">
+            <p class="pw-label">مشاريع بارزة</p>
+            <h2 class="pw-title">موثوقون في أعقد مشاريع السعودية</h2>
+            <p class="pw-sub">من بنية مترو الرياض إلى أعلى أبراج المملكة، سلّمت نافكو أعمال الألمنيوم في المشاريع التي ترسم ملامح السعودية الحديثة.</p>
+        </div>
+        <div class="pw-grid">
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">مترو الرياض</div><div class="pw-item-type">بنية تحتية الرياض</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">برج رفال</div><div class="pw-item-type">برج شاهق الرياض</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">برج المجدول</div><div class="pw-item-type">برج شاهق الرياض</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">المركز الرئيسي لبنك ساب</div><div class="pw-item-type">تجاري الرياض</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">مستشفى الدكتور سليمان الحبيب</div><div class="pw-item-type">رعاية صحية جدة</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">فندق فور سيزونز جدة</div><div class="pw-item-type">ضيافة جدة</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">فندق هيلتون مكة</div><div class="pw-item-type">ضيافة مكة المكرمة</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">برج العبيكان</div><div class="pw-item-type">برج تجاري الرياض</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">ريد سي مول</div><div class="pw-item-type">تجزئة جدة</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">أبراج بيت بلازا</div><div class="pw-item-type">متعدد الاستخدامات مكة المكرمة</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">تلال الوسيل (1,800 فيلا)</div><div class="pw-item-type">سكني سابك</div></div>
+            <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">مستشفى جامعة تبوك</div><div class="pw-item-type">رعاية صحية تبوك</div></div>
+        </div>
+    </div>
+</section>
+<section class="development">
+    <div class="dev-inner">
+        <div class="dev-sticky">
+            <p class="dev-label">النمو والتطوير</p>
+            <h2 class="dev-title">توسيع مستمر لقدراتنا</h2>
+            <p class="dev-text">تقود إدارة نافكو التطوير الاستراتيجي بفعالية عبر كل العمليات فتح أسواق جديدة، تحديث الإنتاج، والاستثمار بالبنية التحتية لمواكبة الطلب المتنامي بالمملكة على أنظمة الألمنيوم المعقدة.</p>
+        </div>
+        <div class="dev-list">
+            <div class="dev-item"><div class="dev-num">01</div><div><div class="dev-item-title">اعتماد الأنظمة الأوروبية والأمريكية</div><div class="dev-item-text">دمج أنظمة الألمنيوم العالمية من الأسواق الأوروبية والأمريكية بخطوط إنتاجنا، لتقديم أفضل الممارسات العالمية للمشاريع السعودية.</div></div></div>
+            <div class="dev-item"><div class="dev-num">02</div><div><div class="dev-item-title">توسعة طاقة الطلاء</div><div class="dev-item-text">توسعة كبرى لمصنع الطلاء بالبودرة بأفران جديدة وأنظمة طلاء محدّثة، بما يواكب حجم المشاريع المتنامي عبر المملكة.</div></div></div>
+            <div class="dev-item"><div class="dev-num">03</div><div><div class="dev-item-title">أسواق المطابخ الدولية</div><div class="dev-item-text">إنشاء قنوات تصدير نشطة لمطابخ الألمنيوم خارج المملكة العربية السعودية، مع اليمن كسوق اختراق أولي.</div></div></div>
+            <div class="dev-item"><div class="dev-num">04</div><div><div class="dev-item-title">إنشاء مصنع ومستودعات جديدة</div><div class="dev-item-text">نعمل حاليًا على بناء مصنع مطابخ مخصص جديد إلى جانب 8,003 متر مربع من المستودعات الجديدة لتلبية احتياجات الشركة المتنامية من المواد.</div></div></div>
+            <div class="dev-item"><div class="dev-num">05</div><div><div class="dev-item-title">سكن موظفين مملوك للشركة</div><div class="dev-item-text">أنشأت الشركة وتمتلك مرافق سكنية مخصصة للقوى العاملة بنافكو، ما يدعم استبقاء المتخصصين المهرة ويضمن استمرارية العمليات.</div></div></div>
+        </div>
+    </div>
+</section>
+<section class="location-band">
+    <div class="location-inner">
+        <div>
+            <p class="about-label">موقعنا</p>
+            <h2 class="about-title" style="font-size:1.5rem">موقع استراتيجي في قلب الرياض الصناعي</h2>
+            <p class="about-text">تقع مصانع نافكو السبعة في المدينة الصناعية الثانية بالرياض المحور الصناعي للمملكة العربية السعودية. يتيح هذا الموقع الاستراتيجي انتشارًا سريعًا على مستوى المملكة ولوجستيات سلسة لتسليم المشاريع واسعة النطاق.</p>
+            <p class="about-text" style="margin-top:0.5rem"><strong style="color:#1c2530">العنوان:</strong> المدينة الصناعية الثانية، ص.ب. 42204، الرياض 11541، المملكة العربية السعودية</p>
+        </div>
+        <div class="location-map"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع نافكو"></iframe></div>
+    </div>
+</section>
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-map-col">
+            <div class="footer-brand"><a href="index-ar.html" class="logo-circle"><img src="images/logo.jpg" alt="شعار نافكو"></a><p class="footer-brand-name">الشركة الأهلية للألمنيوم</p></div>
+            <div class="footer-map-frame"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع نافكو"></iframe></div>
+        </div>
+        <div class="footer-info-col">
+            <p class="footer-col-title">الرياض</p>
+            <div class="footer-info-block"><a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener" class="footer-map-link">شارع 3228، الرياض 14335، المملكة العربية السعودية</a></div>
+            <div class="footer-info-block"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
+            <div class="footer-info-block"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
+            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105">011 265 0105</a></div>
+        </div>
+    </div>
+    <div class="footer-bottom">الشركة الأهلية للألمنيوم نافكو &copy; 2026. جميع الحقوق محفوظة.</div>
+    <div class="footer-credit">تم تطويره بواسطة Momin Abutayeh</div>
+</footer>
+<script src="js/animations.js"></script>
+</body>
+</html>

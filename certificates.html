@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates NAFCO Aluminium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nav { position: fixed; background: #1c2530; border-bottom-color: rgba(255,255,255,0.1); }
+
+        .page-hero { background: #1c2530; padding: 160px 60px 70px; text-align: center; }
+
+        .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.45); font-size: 13px; font-weight: 600; text-decoration: none; margin-bottom: 28px; transition: color 0.2s; }
+        .back-link:hover { color: #fff; }
+        .back-link svg { width: 15px; height: 15px; }
+
+        .page-hero-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 14px; }
+        .page-hero-title { font-size: 38px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 14px; }
+        .page-hero-sub { font-size: 15px; color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+        .certs-page { background: #f7f7f6; padding: 70px 60px 90px; }
+
+        .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; }
+
+        .cert-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.07); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(0,0,0,0.12); }
+
+        .cert-card-img-wrap { position: relative; cursor: zoom-in; overflow: hidden; }
+        .cert-card-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid #eee; transition: transform 0.3s ease; }
+        .cert-card-img-wrap:hover .cert-card-img { transform: scale(1.02); }
+
+        .cert-zoom-hint { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.55); color: #fff; font-size: 11px; font-weight: 600; padding: 5px 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+        .cert-zoom-hint svg { width: 13px; height: 13px; }
+        .cert-card-img-wrap:hover .cert-zoom-hint { opacity: 1; }
+
+        .cert-card-body { padding: 1.5rem 1.5rem 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+
+        .cert-card-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1a7a3c; background: rgba(26,122,60,0.08); padding: 3px 10px; border-radius: 20px; width: fit-content; margin-bottom: 4px; }
+        .cert-card-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #1a7a3c; flex-shrink: 0; }
+
+        .cert-card-title { font-size: 1.1rem; font-weight: 800; color: #1c2530; line-height: 1.2; }
+        .cert-card-sub { font-size: 0.82rem; color: #888; line-height: 1.5; }
+        .cert-card-valid { font-size: 0.78rem; color: #aaa; margin-top: 2px; }
+        .cert-card-valid span { color: #1a7a3c; font-weight: 600; }
+
+        .lightbox { position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.92); display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+        .lightbox.active { opacity: 1; pointer-events: all; }
+        .lightbox-img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 6px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); transform: scale(0.92); transition: transform 0.25s ease; }
+        .lightbox.active .lightbox-img { transform: scale(1); }
+        .lightbox-close { position: absolute; top: 1.25rem; right: 1.5rem; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.12); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+        .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+        .lightbox-close svg { width: 18px; height: 18px; color: #fff; }
+        .lightbox-caption { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.55); font-size: 13px; font-weight: 500; white-space: nowrap; }
+
+        @media (max-width: 900px) {
+            .page-hero { padding: 120px 30px 50px; }
+            .page-hero-title { font-size: 26px; }
+            .certs-page { padding: 50px 30px 60px; }
+            .certs-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        }
+        @media (max-width: 560px) { .certs-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="logo-wrap">
+        <span class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></span>
+        <span class="logo-name">NAFCO</span>
+    </a>
+    <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="projects.html">Our Projects</a></li>
+        <li><a href="certificates.html" style="border-bottom:2px solid #9b1c2e;padding-bottom:3px;">Certificates</a></li>
+        <li><a href="products.html">Professional Products and Services</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="certificates-ar.html">العربية</a></li>
+    </ul>
+</nav>
+
+<div class="page-hero">
+    <a href="index.html" class="back-link">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Home
+    </a>
+    <p class="page-hero-label">Quality Assurance</p>
+    <h1 class="page-hero-title">Certificates &amp; Standards</h1>
+    <p class="page-hero-sub">Independently audited and certified to international standards giving our clients full confidence in every project we deliver.</p>
+</div>
+
+<div class="certs-page">
+    <div class="certs-grid">
+
+        <div class="cert-card">
+            <div class="cert-card-img-wrap" onclick="openLightbox('images/iso-certificate.png','ISO 9001:2015 Certificate')">
+                <img src="images/iso-certificate.png" alt="ISO 9001:2015" class="cert-card-img">
+                <div class="cert-zoom-hint">
+                    <svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/><line x1="10.5" y1="10.5" x2="14" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="7" y1="5" x2="7" y2="9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="5" y1="7" x2="9" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    Click to zoom
+                </div>
+            </div>
+            <div class="cert-card-body">
+                <div class="cert-card-badge">Active</div>
+                <div class="cert-card-title">ISO 9001:2015</div>
+                <div class="cert-card-sub">Quality Management System Design, Fabrication, Assembly and Installation of Facade Works</div>
+                <div class="cert-card-valid">Valid until <span>15 February 2029</span></div>
+            </div>
+
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-card-img-wrap" onclick="openLightbox('images/audit-report-page1.png','Re-Audit Report Page 1')">
+                <img src="images/audit-report-page1.png" alt="Re-Audit Report" class="cert-card-img">
+                <div class="cert-zoom-hint">
+                    <svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/><line x1="10.5" y1="10.5" x2="14" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="7" y1="5" x2="7" y2="9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="5" y1="7" x2="9" y2="7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    Click to zoom
+                </div>
+            </div>
+            <div class="cert-card-body">
+                <div class="cert-card-badge">June 2026</div>
+                <div class="cert-card-title">Re-Audit Report</div>
+                <div class="cert-card-sub">Management System Audit ISO 9001:2015 Re-Certification. Zero corrective actions raised.</div>
+                <div class="cert-card-valid">Lead Auditor: <span>Khawer Zubair</span></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-map-col">
+            <div class="footer-brand"><a href="index.html" class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></a><p class="footer-brand-name">National Aluminium Factory Co.</p></div>
+            <div class="footer-map-frame"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NAFCO location"></iframe></div>
+        </div>
+        <div class="footer-info-col">
+            <p class="footer-col-title">Riyadh</p>
+            <div class="footer-info-block"><a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener" class="footer-map-link">Street 3228, Riyadh 14335, Saudi Arabia</a></div>
+            <div class="footer-info-block"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
+            <div class="footer-info-block"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
+            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105">011 265 0105</a></div>
+        </div>
+    </div>
+    <div class="footer-bottom">National Aluminium Factory Co. NAFCO &copy; 2026. All rights reserved.</div>
+    <div class="footer-credit">Developed by Momin Abutayeh</div>
+</footer>
+
+<script>
+    function openLightbox(src, caption) {
+        var lb = document.getElementById('lightbox');
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox-caption').textContent = caption + '  Click anywhere outside to close';
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+        if (e && e.target === document.getElementById('lightbox-img')) return;
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+<script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نافكو للألمنيوم</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER / HERO (single image, rotating text) ============ -->
+<header class="hero" style="background-image:url('images/hero-1.jpg')">
+    <div class="hero-overlay"></div>
+
+    <nav class="nav">
+        <a href="index-ar.html" class="logo-wrap">
+ <span class="logo-circle">
+ <img src="images/logo.jpg" alt="شعار نافكو">
+ </span>
+            <span class="logo-name">نافكو</span>
+        </a>
+        <ul class="navlinks">
+            <li><a href="index-ar.html">الرئيسية</a></li>
+            <li><a href="about-ar.html">من نحن</a></li>
+            <li><a href="projects-ar.html">مشاريعنا</a></li>
+            <li><a href="certificates-ar.html">الشهادات</a></li>
+            <li><a href="products-ar.html">المنتجات والخدمات المتخصصة</a></li>
+            <li><a href="contact-ar.html">تواصل معنا</a></li>
+            <li><a href="index.html">English</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-content">
+        <div class="hero-text active">
+            <p class="hero-eyebrow">الشركة الأهلية للألمنيوم نافكو</p>
+            <h1 class="hero-title">نصمم أنظمة الألمنيوم المعقدة<br>لعالم يتطلب الدقة</h1>
+        </div>
+        <div class="hero-text">
+            <p class="hero-eyebrow">57 عامًا من الحرفية</p>
+            <h1 class="hero-title">سبعة مصانع.<br>معيار هندسي واحد.</h1>
+        </div>
+        <div class="hero-text">
+            <p class="hero-eyebrow">هندسة موثّقة</p>
+            <h1 class="hero-title">كل نظام واجهة زجاجية<br>يُختبر قبل أن يُعتمد</h1>
+        </div>
+        <div class="hero-text">
+            <p class="hero-eyebrow">داخل نافكو</p>
+            <h1 class="hero-title">الدقة في كل<br>مرحلة من الإنتاج</h1>
+        </div>
+        <div class="hero-text">
+            <p class="hero-eyebrow">مشاريع بارزة</p>
+            <h1 class="hero-title">بُنيت لأبرز أفق<br>في السعودية</h1>
+        </div>
+        <div class="hero-text">
+            <p class="hero-eyebrow">أكثر من 1,300 متخصص</p>
+            <h1 class="hero-title">حرفية تقف خلف<br>كل قطاع</h1>
+        </div>
+    </div>
+
+    <div class="hero-dots">
+        <button class="hero-dot active" onclick="goToHeroSlide(0)" aria-label="الشريحة 1"></button>
+        <button class="hero-dot" onclick="goToHeroSlide(1)" aria-label="الشريحة 2"></button>
+        <button class="hero-dot" onclick="goToHeroSlide(2)" aria-label="الشريحة 3"></button>
+        <button class="hero-dot" onclick="goToHeroSlide(3)" aria-label="الشريحة 4"></button>
+        <button class="hero-dot" onclick="goToHeroSlide(4)" aria-label="الشريحة 5"></button>
+        <button class="hero-dot" onclick="goToHeroSlide(5)" aria-label="الشريحة 6"></button>
+    </div>
+</header>
+
+<!-- ============ VISION ============ -->
+<section class="vision">
+    <div class="vision-text-col">
+        <div class="vision-label">الرؤية</div>
+        <p class="vision-text">
+            أن نكون الشركة الرائدة إقليميًا في هندسة أنظمة الألمنيوم المعقدة
+            بتقديم حلول الواجهات والمقاطع الإنشائية والمكونات الدقيقة
+            التي تحدد ملامح البيئة العمرانية في السعودية وخارجها.
+            حيث يرى الآخرون التحدي، ترى نافكو فرصة هندسية.
+        </p>
+        <a href="about-ar.html" class="vision-btn">من نحن</a>
+    </div>
+    <div class="vision-map-col">
+        <svg class="world-dots" id="world-map" viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+</section>
+
+<!-- ============ 3 FEATURE CARDS ============ -->
+<section class="cards3">
+    <div class="card">
+        <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/>
+            </svg>
+        </div>
+        <div class="card-text">
+            <h3 class="card-title">رقابة جودة دقيقة</h3>
+            <p class="card-sub">الأنظمة المعقدة لا تحتمل أي تفاوت. كل قطاعة ووصلة وتشطيب يمر بفحص صارم عبر السبع مصانع قبل مغادرة أرض الإنتاج.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.5 2.5v6.8L4.8 18a2 2 0 001.8 3h9.8a2 2 0 001.8-3l-4.7-8.7V2.5"/>
+                <line x1="9" y1="2.5" x2="15.5" y2="2.5"/>
+            </svg>
+        </div>
+        <div class="card-text">
+            <h3 class="card-title">نهج هندسي</h3>
+            <p class="card-sub">لا نُصنّع فقط بل نُهندس. من أنظمة الواجهات الزجاجية الموحدة إلى الحلول الإنشائية المخصصة، تقدم نافكو عمقًا تقنيًا في كل مشروع.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 13.4a1.9 1.9 0 000-2.8l1.4-1.6-1.6-2.7-2 .6a7.4 7.4 0 00-2.4-1.4L14.5 3h-3l-.3 2.5a7.4 7.4 0 00-2.4 1.4l-2-.6-1.6 2.7 1.4 1.6a1.9 1.9 0 000 2.8l-1.4 1.6 1.6 2.7 2-.6a7.4 7.4 0 002.4 1.4l.3 2.5h3l.3-2.5a7.4 7.4 0 002.4-1.4l2 .6 1.6-2.7z"/>
+            </svg>
+        </div>
+        <div class="card-text">
+            <h3 class="card-title">إنتاج بحجم معقد</h3>
+            <p class="card-sub">سبعة مصانع متخصصة تعمل بالتوازي تمنح نافكو القدرة والمرونة لتسليم مشاريع بحجم بارز في الوقت المحدد دون أي تنازل.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PROFESSIONAL PRODUCTS AND SERVICES ============ -->
+<section class="products-band">
+    <div class="products-intro">
+        <p class="products-label">المنتجات والخدمات المتخصصة</p>
+        <h2 class="products-heading">هندسة ألمنيوم شاملة<br>من البثق إلى الواجهة المُركّبة</h2>
+        <p class="products-text">
+            تغطي قدرات نافكو المتكاملة كل مراحل هندسة الألمنيوم المعقدة:
+            بثق دقيق، تصنيع عالي الأداء، وتجميع وتشطيب كامل.
+            هذا النهج ذو المصدر الواحد المدعوم بخبرة 57 عامًا وسبعة مصانع متخصصة
+            يعني تفاوتات أدق، تسليمًا أسرع، ومسؤولية كاملة في كل مشروع.
+        </p>
+    </div>
+    <div class="products-grid">
+        <a href="products-ar.html" class="product-tile" style="background-image:url('images/product-extrusion.jpg')">
+            <span class="product-tile-label">بثق الألمنيوم</span>
+        </a>
+        <a href="products-ar.html" class="product-tile" style="background-image:url('images/product-kitchens.jpg')">
+            <span class="product-tile-label">تصنيع الأبواب والنوافذ</span>
+        </a>
+        <a href="products-ar.html" class="product-tile" style="background-image:url('images/product-coating.jpg')">
+            <span class="product-tile-label">التجميع والتشطيب</span>
+        </a>
+    </div>
+</section>
+
+<!-- ============ QUALITY CONTROL DETAIL ============ -->
+<section class="qc-section">
+    <div class="qc-text-col">
+        <p class="qc-label">رقابة الجودة</p>
+        <h2 class="qc-heading">دقة هندسية تُفحص في كل مرحلة</h2>
+        <p class="qc-body">
+            الأنظمة المعقدة لا تحتمل الخطأ. منهجية رقابة الجودة في نافكو
+            مدمجة عبر دورة الإنتاج الكاملة لا تُطبق في النهاية فقط.
+            من فحص السبيكة الخام وحتى التحقق النهائي من الأبعاد،
+            يُحمّل كل مكون على معايير هندسية عالمية
+            قبل وصوله إلى موقع المشروع.
+        </p>
+        <ul class="qc-list">
+            <li>بثق الألمنيوم</li>
+            <li>الأنودة</li>
+            <li>الطلاء بالبودرة</li>
+            <li>تصنيع المطابخ</li>
+        </ul>
+    </div>
+    <div class="qc-img-col">
+        <img src="images/quality-control.jpg" alt="رقابة الجودة في مصنع نافكو">
+    </div>
+</section>
+
+<!-- ============ OUR PROJECTS ============ -->
+<section class="projects-section">
+    <div class="projects-intro">
+        <p class="projects-label">مشاريع بارزة</p>
+        <h2 class="projects-heading">موثوقون في أعقد مشاريع السعودية</h2>
+        <p class="projects-text">
+            المشاريع الأكثر تحديًا هندسيًا في المملكة تتطلب مُصنّعًا بعمق هندسي حقيقي.
+            لنافكو سجل مثبت في الأبراج الشاهقة، المستشفيات البارزة، المقرات المالية،
+            والضيافة الفاخرة حيث يكون التعقيد هو المعيار.
+        </p>
+    </div>
+    <div class="projects-grid">
+        <a href="projects-ar.html" class="project-tile">
+            <span class="project-tile-bg" style="background-image:url('images/project-majdoul.jpg')"></span>
+            <span class="project-tile-info">
+ <span class="project-tile-city">الرياض</span>
+ <span class="project-tile-name">برج المجدول</span>
+ <span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
+ </span>
+        </a>
+        <a href="projects-ar.html" class="project-tile">
+            <span class="project-tile-bg" style="background-image:url('images/project-habib-hospital.jpg')"></span>
+            <span class="project-tile-info">
+ <span class="project-tile-city">جدة</span>
+ <span class="project-tile-name">مستشفى الدكتور سليمان الحبيب</span>
+ <span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
+ </span>
+        </a>
+        <a href="projects-ar.html" class="project-tile">
+            <span class="project-tile-bg" style="background-image:url('images/project-sabb-hq.jpg')"></span>
+            <span class="project-tile-info">
+ <span class="project-tile-city">الرياض</span>
+ <span class="project-tile-name">المركز الرئيسي لبنك ساب</span>
+ <span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
+ </span>
+        </a>
+        <a href="projects-ar.html" class="project-tile">
+            <span class="project-tile-bg" style="background-image:url('images/project-four-seasons.jpg')"></span>
+            <span class="project-tile-info">
+ <span class="project-tile-city">جدة</span>
+ <span class="project-tile-name">فندق فور سيزونز</span>
+ <span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
+ </span>
+        </a>
+    </div>
+</section>
+
+<!-- ============ COMPETITIVE ADVANTAGES ============ -->
+<section class="advantages-section">
+    <div class="advantages-inner">
+        <p class="advantages-label">لماذا نافكو</p>
+        <h2 class="advantages-heading">الأساس الهندسي وراء كل مشروع معقد</h2>
+        <p class="advantages-text">
+            هندسة أنظمة الألمنيوم المعقدة تتطلب أكثر من المعدات
+            تتطلب معرفة متراكمة، وقدرة متكاملة، والشراكات الصحيحة.
+            أنفقت نافكو 57 عامًا في بناء ذلك بالضبط:
+        </p>
+        <ul class="advantages-list">
+            <li>أكثر من 57 عامًا من الخبرة في هندسة الألمنيوم المعقد</li>
+            <li>سبعة مصانع متخصصة تعمل كنظام متكامل واحد</li>
+            <li>فريق يضم أكثر من 1,300 مهندس وفني ومتخصص</li>
+            <li>سجل مشاريع مثبت في أبرز وأعقد مشاريع السعودية</li>
+            <li>موقع استراتيجي في الرياض يتيح انتشارًا سريعًا على مستوى المملكة</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============ OUR SUCCESS PARTNERS ============ -->
+<section class="partners-section">
+    <p class="partners-label">شركاء النجاح</p>
+    <h2 class="partners-heading">نهندس الأنظمة المعقدة معًا</h2>
+    <p class="partners-subtitle">
+        تتشارك نافكو حصريًا مع قادة عالميين معتمدين في الألمنيوم والواجهات وتجهيزات المباني.
+        هذه العلاقات الموثوقة تمكّننا من هندسة أنظمة معقدة
+        من الواجهات الزجاجية الدقيقة إلى حلول واجهات الأبراج الشاهقة بأعلى معيار.
+    </p>
+    <div class="partners-grid">
+        <div class="partner-card">
+            <div class="partner-logo-wrap">
+                <img src="images/partner-technal.png" alt="Technal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="partner-name-fallback">Technal</div>
+            </div>
+            <div class="partner-category">أنظمة الألمنيوم</div>
+        </div>
+        <div class="partner-card">
+            <div class="partner-logo-wrap">
+                <img src="images/partner-schuco.png" alt="Schuco" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="partner-name-fallback">Sch&uuml;co</div>
+            </div>
+            <div class="partner-category">أنظمة الألمنيوم</div>
+        </div>
+        <div class="partner-card">
+            <div class="partner-logo-wrap">
+                <img src="images/partner-efp.png" alt="EFP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="partner-name-fallback">EFP</div>
+            </div>
+            <div class="partner-category">منتجات الواجهات الأوروبية</div>
+        </div>
+        <div class="partner-card">
+            <div class="partner-logo-wrap">
+                <img src="images/partner-dorma.png" alt="Dorma" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="partner-name-fallback">Dorma</div>
+            </div>
+            <div class="partner-category">ملحقات الأبواب</div>
+        </div>
+        <div class="partner-card">
+            <div class="partner-logo-wrap">
+                <img src="images/partner-hilti.png" alt="Hilti" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="partner-name-fallback">Hilti</div>
+            </div>
+            <div class="partner-category">أنظمة التثبيت</div>
+        </div>
+        <div class="partner-card">
+            <div class="partner-logo-wrap">
+                <img src="images/partner-savio.png" alt="Savio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="partner-name-fallback">Savio</div>
+            </div>
+            <div class="partner-category">المقابض والتجهيزات</div>
+        </div>
+    </div>
+    <div class="partners-strip">
+        <div class="strip-inner">
+            <div class="strip-icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 34L20 6l14 28H6z" stroke="#9b1c2e" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M11.5 24h17" stroke="#9b1c2e" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="strip-text">
+                <strong>مُصنّع ومُركّب معتمد</strong> لأنظمة EFP الأوروبية للواجهات
+                موثوقون لتقديم حلول ألمنيوم بمعيار هندسي على أعقد مشاريع السعودية البارزة.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ GOALS CTA ============ -->
+<section class="goals-cta">
+    <p class="goals-label">التزامنا</p>
+    <h2 class="goals-heading">إذا كان معقدًا، تقنيًا، ويتطلب الدقة فنافكو تهندسه</h2>
+    <a href="about-ar.html" class="goals-btn">من نحن</a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-map-col">
+            <div class="footer-brand">
+                <a href="index-ar.html" class="logo-circle">
+                    <img src="images/logo.jpg" alt="شعار نافكو">
+                </a>
+                <p class="footer-brand-name">الشركة الأهلية للألمنيوم</p>
+            </div>
+            <div class="footer-map-frame">
+                <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near"
+                        width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="موقع نافكو على خرائط قوقل">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-info-col">
+            <p class="footer-col-title">الرياض</p>
+            <div class="footer-info-block">
+                <a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia"
+                   target="_blank" rel="noopener" class="footer-map-link">
+                    شارع 3228، الرياض 14335، المملكة العربية السعودية
+                </a>
+            </div>
+            <div class="footer-info-block">
+                <a href="mailto:sales@alunafco.com">sales@alunafco.com</a>
+            </div>
+            <div class="footer-info-block">
+                <a href="mailto:costing@alunafco.com">costing@alunafco.com</a>
+            </div>
+            <div class="footer-info-block footer-info-block--last">
+                <a href="tel:+9660112650105">011 265 0105</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        الشركة الأهلية للألمنيوم نافكو &copy; 2026. جميع الحقوق محفوظة.
+    </div>
+    <div class="footer-credit">تم تطويره بواسطة Momin Abutayeh</div>
+</footer>
+
+<script>
+    (function () {
+        var svg = document.getElementById('world-map');
+        if (!svg) return;
+        var W = 1000, H = 460;
+        function project(lon, lat) { return [(lon + 180) / 360 * W, (90 - lat) / 180 * H]; }
+        function ringToD(ring) {
+            return ring.map(function(pt, i) {
+                var p = project(pt[0], pt[1]);
+                return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1);
+            }).join(' ') + 'Z';
+        }
+        function geoToD(geometry) {
+            if (!geometry) return '';
+            var parts = [];
+            if (geometry.type === 'Polygon') {
+                geometry.coordinates.forEach(function(r) { parts.push(ringToD(r)); });
+            } else if (geometry.type === 'MultiPolygon') {
+                geometry.coordinates.forEach(function(p) { p.forEach(function(r) { parts.push(ringToD(r)); }); });
+            }
+            return parts.join(' ');
+        }
+        fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                data.features.forEach(function(f) {
+                    var name = f.properties.ADMIN || f.properties.name || '';
+                    var d = geoToD(f.geometry);
+                    if (!d) return;
+                    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('d', d);
+                    path.setAttribute('fill', name === 'Saudi Arabia' ? '#9b1c2e' : '#d7d9dc');
+                    path.setAttribute('stroke', '#f7f7f6');
+                    path.setAttribute('stroke-width', '0.4');
+                    svg.appendChild(path);
+                });
+            })
+            .catch(function() {
+                svg.innerHTML = '<rect width="1000" height="460" fill="#e8ecf0" rx="6"/>';
+            });
+    })();
+
+    (function () {
+        var texts = document.querySelectorAll('.hero-text');
+        var dots = document.querySelectorAll('.hero-dot');
+        var total = texts.length;
+        var current = 0;
+        var timer = null;
+
+        function showHeroSlide(i) {
+            texts.forEach(function (t, idx) { t.classList.toggle('active', idx === i); });
+            dots.forEach(function (d, idx) { d.classList.toggle('active', idx === i); });
+            current = i;
+        }
+
+        function nextHeroSlide() { showHeroSlide((current + 1) % total); }
+
+        function startHeroTimer() {
+            timer = setInterval(nextHeroSlide, 5000);
+        }
+
+        window.goToHeroSlide = function (i) {
+            showHeroSlide(i);
+            clearInterval(timer);
+            startHeroTimer();
+        };
+
+        if (total > 0) startHeroTimer();
+    })();
+</script>
+<script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products &amp; Services NAFCO Aluminium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nav { position: fixed; background: #1c2530; border-bottom-color: rgba(255,255,255,0.1); z-index: 100; }
+        .prod-hero { min-height: 100vh; background: #0f161e; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+        .prod-hero-left { display: flex; flex-direction: column; justify-content: center; padding: 160px 60px 80px; position: relative; z-index: 2; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.4); font-size: 13px; font-weight: 600; text-decoration: none; margin-bottom: 40px; transition: color 0.2s; }
+        .back-link:hover { color: #fff; }
+        .back-link svg { width: 15px; height: 15px; }
+        .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 20px; }
+        .hero-title { font-size: 52px; font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 24px; }
+        .hero-title span { color: #9b1c2e; }
+        .hero-sub { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; max-width: 440px; margin-bottom: 40px; }
+        .hero-cta { display: inline-flex; align-items: center; gap: 10px; background: #9b1c2e; color: #fff; padding: 1rem 2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: background 0.2s, transform 0.2s; width: fit-content; }
+        .hero-cta:hover { background: #7e1624; transform: translateX(4px); }
+        .hero-cta svg { width: 18px; height: 18px; }
+        .prod-hero-right { position: relative; overflow: hidden; }
+        .prod-hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, #0f161e 0%, transparent 30%); z-index: 1; }
+        .prod-hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .prod-stats { background: #9b1c2e; padding: 28px 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+        .prod-stat { text-align: center; color: #fff; padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.2); }
+        .prod-stat:last-child { border-right: none; }
+        .prod-stat-num { font-size: 1.8rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+        .prod-stat-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+        .products-showcase { background: #f7f7f6; }
+        .product-feature { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+        .product-feature:nth-child(even) .pf-img { order: -1; }
+        .pf-img { position: relative; overflow: hidden; }
+        .pf-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .product-feature:hover .pf-img img { transform: scale(1.04); }
+        .pf-img-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(155,28,46,0.6) 0%, transparent 60%); opacity: 0; transition: opacity 0.4s ease; }
+        .product-feature:hover .pf-img-overlay { opacity: 1; }
+        .pf-content { padding: 5rem; display: flex; flex-direction: column; justify-content: center; background: #fff; }
+        .product-feature:nth-child(even) .pf-content { background: #f7f7f6; }
+        .pf-num { font-size: 5rem; font-weight: 900; color: rgba(155,28,46,0.06); line-height: 1; margin-bottom: -1rem; }
+        .pf-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 12px; }
+        .pf-title { font-size: 1.8rem; font-weight: 700; color: #1c2530; line-height: 1.3; margin-bottom: 1rem; }
+        .pf-text { font-size: 0.92rem; color: #666; line-height: 1.85; margin-bottom: 2rem; }
+        .pf-specs { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; }
+        .pf-spec { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: #444; }
+        .pf-spec::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #9b1c2e; flex-shrink: 0; }
+        .pf-cta { display: inline-flex; align-items: center; gap: 8px; color: #9b1c2e; font-size: 0.88rem; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; transition: gap 0.2s; }
+        .pf-cta:hover { gap: 14px; }
+        .pf-cta svg { width: 16px; height: 16px; }
+        .services-section { background: #1c2530; padding: 90px 60px; }
+        .services-inner { max-width: 1100px; margin: 0 auto; }
+        .section-top { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; }
+        .s-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
+        .s-title { font-size: 1.8rem; font-weight: 700; color: #fff; line-height: 1.3; }
+        .s-sub { font-size: 0.9rem; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 360px; text-align: right; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(255,255,255,0.05); border-radius: 14px; overflow: hidden; }
+        .svc-card { background: #1c2530; padding: 2.5rem 2rem; position: relative; transition: background 0.25s; overflow: hidden; }
+        .svc-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: #9b1c2e; transition: width 0.35s ease; }
+        .svc-card:hover { background: #212d3b; }
+        .svc-card:hover::before { width: 100%; }
+        .svc-icon { width: 44px; height: 44px; background: rgba(155,28,46,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+        .svc-icon svg { width: 22px; height: 22px; color: #9b1c2e; }
+        .svc-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+        .svc-text { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
+        .process-section { background: #fff; padding: 90px 60px; }
+        .process-inner { max-width: 1100px; margin: 0 auto; }
+        .process-header { text-align: center; margin-bottom: 4rem; }
+        .p-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 12px; }
+        .p-title { font-size: 1.8rem; font-weight: 700; color: #1c2530; }
+        .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; }
+        .process-steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 2px; background: linear-gradient(to right, #9b1c2e, rgba(155,28,46,0.2)); }
+        .step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1rem; position: relative; }
+        .step-circle { width: 56px; height: 56px; border-radius: 50%; border: 2px solid #9b1c2e; background: #fff; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; position: relative; z-index: 1; transition: background 0.2s; }
+        .step:hover .step-circle { background: #9b1c2e; }
+        .step:hover .step-circle svg { color: #fff; }
+        .step-circle svg { width: 22px; height: 22px; color: #9b1c2e; transition: color 0.2s; }
+        .step-num { position: absolute; top: -8px; right: -4px; width: 20px; height: 20px; background: #9b1c2e; color: #fff; border-radius: 50%; font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+        .step-title { font-size: 0.85rem; font-weight: 700; color: #1c2530; margin-bottom: 6px; }
+        .step-text { font-size: 0.75rem; color: #888; line-height: 1.5; }
+        .prod-cta { background: linear-gradient(135deg, #0f161e 0%, #1c2530 100%); padding: 90px 60px; text-align: center; position: relative; overflow: hidden; }
+        .prod-cta::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(155,28,46,0.15) 0%, transparent 70%); }
+        .prod-cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+        .cta-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 16px; }
+        .cta-title { font-size: 2.2rem; font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 1rem; }
+        .cta-sub { font-size: 0.95rem; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 2.5rem; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #9b1c2e; color: #fff; padding: 1rem 2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+        .cta-btn-primary:hover { background: #7e1624; }
+        .cta-btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.8); padding: 1rem 2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 700; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); transition: background 0.2s; }
+        .cta-btn-secondary:hover { background: rgba(255,255,255,0.1); }
+        @media (max-width: 1000px) {
+            .prod-hero { grid-template-columns: 1fr; min-height: auto; }
+            .prod-hero-right { height: 300px; }
+            .prod-hero-right::before { background: linear-gradient(to bottom, #0f161e, transparent); }
+            .prod-stats { grid-template-columns: repeat(2, 1fr); }
+            .product-feature { grid-template-columns: 1fr; min-height: auto; }
+            .product-feature:nth-child(even) .pf-img { order: 0; }
+            .pf-img { height: 320px; }
+            .pf-content { padding: 3rem 2rem; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+            .process-steps::before { display: none; }
+        }
+        @media (max-width: 768px) {
+            .prod-hero-left { padding: 120px 30px 60px; }
+            .hero-title { font-size: 34px; }
+            .prod-stats { padding: 24px 30px; }
+            .services-section, .process-section, .prod-cta { padding: 60px 30px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .section-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .s-sub { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="logo-wrap">
+        <span class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></span>
+        <span class="logo-name">NAFCO</span>
+    </a>
+    <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="projects.html">Our Projects</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="products.html" style="border-bottom:2px solid #9b1c2e;padding-bottom:3px;">Professional Products and Services</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="products-ar.html">العربية</a></li>
+    </ul>
+</nav>
+
+<div class="prod-hero">
+    <div class="prod-hero-left">
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back to Home
+        </a>
+        <p class="hero-eyebrow">Professional Products &amp; Services</p>
+        <h1 class="hero-title">From Raw<br>Extrusion to<br><span>Installed Facade</span></h1>
+        <p class="hero-sub">NAFCO provides end-to-end aluminium solutions seven specialized factories working as one integrated system to deliver complex projects at scale.</p>
+        <a href="contact.html" class="hero-cta">
+            Request a Quote
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+    <div class="prod-hero-right">
+        <img src="images/hero-1.jpg" alt="NAFCO Factory">
+    </div>
+</div>
+
+<div class="prod-stats">
+    <div class="prod-stat">
+        <div class="prod-stat-num">7</div>
+        <div class="prod-stat-lbl">Specialized Factories</div>
+    </div>
+    <div class="prod-stat">
+        <div class="prod-stat-num">57+</div>
+        <div class="prod-stat-lbl">Years of Production</div>
+    </div>
+    <div class="prod-stat">
+        <div class="prod-stat-num">1,300+</div>
+        <div class="prod-stat-lbl">Skilled Specialists</div>
+    </div>
+    <div class="prod-stat">
+        <div class="prod-stat-num">ISO</div>
+        <div class="prod-stat-lbl">9001:2015 Certified</div>
+    </div>
+</div>
+
+<div class="products-showcase">
+
+    <div class="product-feature">
+        <div class="pf-img">
+            <img src="images/product-extrusion.jpg" alt="Aluminium Extrusion">
+            <div class="pf-img-overlay"></div>
+        </div>
+        <div class="pf-content">
+            <div class="pf-num">01</div>
+            <div class="pf-label">Core Production</div>
+            <h2 class="pf-title">Aluminium Extrusion</h2>
+            <p class="pf-text">
+                NAFCO's extrusion facility produces custom aluminium profiles to exact structural
+                and architectural specifications. Leveraging European and American aluminium systems
+                adopted for the Saudi market, our profiles are engineered for high-rise facades,
+                curtain wall systems, and complex structural applications.
+            </p>
+            <div class="pf-specs">
+                <div class="pf-spec">Custom profiles to precise specifications</div>
+                <div class="pf-spec">European &amp; American system compatibility</div>
+                <div class="pf-spec">Structural and architectural grades</div>
+                <div class="pf-spec">High-rise and curtain wall ready</div>
+            </div>
+            <a href="contact.html" class="pf-cta">
+                Request specifications
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="product-feature">
+        <div class="pf-img">
+            <img src="images/product-kitchens.jpg" alt="Doors & Windows">
+            <div class="pf-img-overlay"></div>
+        </div>
+        <div class="pf-content">
+            <div class="pf-num">02</div>
+            <div class="pf-label">Fabrication</div>
+            <h2 class="pf-title">Doors, Windows &amp; Kitchens</h2>
+            <p class="pf-text">
+                From high-performance aluminium door and window systems for residential compounds
+                and commercial towers, to complete kitchen installations for large hospitality and
+                residential projects NAFCO's fabrication division delivers precision at every scale.
+                Our kitchen manufacturing now serves markets beyond Saudi Arabia.
+            </p>
+            <div class="pf-specs">
+                <div class="pf-spec">Residential &amp; commercial window systems</div>
+                <div class="pf-spec">High-performance door fabrication</div>
+                <div class="pf-spec">Complete kitchen systems</div>
+                <div class="pf-spec">Export-ready production capacity</div>
+            </div>
+            <a href="contact.html" class="pf-cta">
+                Request specifications
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="product-feature">
+        <div class="pf-img">
+            <img src="images/product-coating.jpg" alt="Powder Coating">
+            <div class="pf-img-overlay"></div>
+        </div>
+        <div class="pf-content">
+            <div class="pf-num">03</div>
+            <div class="pf-label">Finishing</div>
+            <h2 class="pf-title">Powder Coating &amp; Anodizing</h2>
+            <p class="pf-text">
+                NAFCO's expanded coating facility equipped with new industrial furnaces and
+                the latest coating systems provides complete surface finishing for aluminium
+                profiles and fabricated components. Our anodizing line delivers durable,
+                corrosion-resistant finishes meeting international standards.
+            </p>
+            <div class="pf-specs">
+                <div class="pf-spec">Expanded furnace capacity</div>
+                <div class="pf-spec">Latest powder coating systems</div>
+                <div class="pf-spec">Industrial anodizing line</div>
+                <div class="pf-spec">Corrosion-resistant finishes</div>
+            </div>
+            <a href="contact.html" class="pf-cta">
+                Request specifications
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="product-feature">
+        <div class="pf-img">
+            <img src="images/quality-control.jpg" alt="Curtain Wall">
+            <div class="pf-img-overlay"></div>
+        </div>
+        <div class="pf-content">
+            <div class="pf-num">04</div>
+            <div class="pf-label">Complex Systems</div>
+            <h2 class="pf-title">Curtain Wall &amp; Facade Systems</h2>
+            <p class="pf-text">
+                NAFCO's most technically demanding capability the design, fabrication, assembly,
+                and full installation of complex curtain wall and facade systems for high-rise towers,
+                landmark buildings, and infrastructure projects. This is the scope of our ISO 9001:2015
+                certification, and the work that defines our reputation.
+            </p>
+            <div class="pf-specs">
+                <div class="pf-spec">Unitised curtain wall systems</div>
+                <div class="pf-spec">High-tech glazing &amp; cladding</div>
+                <div class="pf-spec">Full design-to-installation service</div>
+                <div class="pf-spec">ISO 9001:2015 certified scope</div>
+            </div>
+            <a href="contact.html" class="pf-cta">
+                Discuss your project
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<section class="services-section">
+    <div class="services-inner">
+        <div class="section-top">
+            <div>
+                <p class="s-label">Additional Services</p>
+                <h2 class="s-title">Every capability<br>under one roof</h2>
+            </div>
+            <p class="s-sub">Seven factories, one partner. NAFCO handles the full production cycle so your project never loses momentum.</p>
+        </div>
+        <div class="services-grid">
+
+            <div class="svc-card">
+                <div class="svc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="svc-title">Quality Inspection</div>
+                <div class="svc-text">Rigorous in-process and final inspection across all production lines. Every component verified before delivery.</div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="svc-title">On-Site Installation</div>
+                <div class="svc-text">Full installation services across Saudi Arabia. Our teams have installed aluminium systems on the Kingdom's most demanding sites.</div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div class="svc-title">Technical Consultation</div>
+                <div class="svc-text">Our engineering team provides system selection, specification support, and technical consultation from early project stages.</div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                </div>
+                <div class="svc-title">Shop Drawing Production</div>
+                <div class="svc-text">Detailed shop drawings and technical submittals prepared to project specifications, ready for consultant and client approval.</div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="svc-title">Warehousing &amp; Logistics</div>
+                <div class="svc-text">8,000+ m&sup2; of new warehouse capacity for project material storage, ensuring reliable delivery scheduling for large-scale projects.</div>
+            </div>
+
+            <div class="svc-card">
+                <div class="svc-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+                </div>
+                <div class="svc-title">Export Supply</div>
+                <div class="svc-text">Established export capability for aluminium profiles and kitchen systems to regional markets beyond Saudi Arabia.</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="process-section">
+    <div class="process-inner">
+        <div class="process-header">
+            <p class="p-label">How We Work</p>
+            <h2 class="p-title">From enquiry to installation</h2>
+        </div>
+        <div class="process-steps">
+
+            <div class="step">
+                <div class="step-circle">
+                    <div class="step-num">1</div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <div class="step-title">Enquiry</div>
+                <div class="step-text">Submit your project requirements via our contact form or call our sales team.</div>
+            </div>
+
+            <div class="step">
+                <div class="step-circle">
+                    <div class="step-num">2</div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </div>
+                <div class="step-title">Consultation</div>
+                <div class="step-text">Technical review of project scope and system selection recommendations.</div>
+            </div>
+
+            <div class="step">
+                <div class="step-circle">
+                    <div class="step-num">3</div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <div class="step-title">Shop Drawings</div>
+                <div class="step-text">Detailed technical submittals prepared and submitted for approval.</div>
+            </div>
+
+            <div class="step">
+                <div class="step-circle">
+                    <div class="step-num">4</div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20V8l8-5 8 5v12"/><rect x="9" y="13" width="6" height="7"/></svg>
+                </div>
+                <div class="step-title">Production</div>
+                <div class="step-text">Fabrication across 7 specialized factories with in-process quality control.</div>
+            </div>
+
+            <div class="step">
+                <div class="step-circle">
+                    <div class="step-num">5</div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="step-title">Delivery &amp; Install</div>
+                <div class="step-text">On-site delivery, assembly, and installation by our certified teams.</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="prod-cta">
+    <div class="prod-cta-inner">
+        <p class="cta-label">Start a Project</p>
+        <h2 class="cta-title">Ready to engineer something complex?</h2>
+        <p class="cta-sub">Tell us about your project and our specialists will put together the right solution from a single profile to a complete high-rise facade.</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="cta-btn-primary">
+                <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="M3 10l14-7-7 14V10H3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Send us a message
+            </a>
+            <a href="tel:+9660112650105" class="cta-btn-secondary">
+                <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="M18.33 14.09v2.5a1.67 1.67 0 01-1.82 1.67 16.49 16.49 0 01-7.19-2.56 16.25 16.25 0 01-5-5 16.49 16.49 0 01-2.56-7.22A1.67 1.67 0 013.43 1.67h2.5a1.67 1.67 0 011.67 1.43 10.72 10.72 0 00.58 2.34 1.67 1.67 0 01-.38 1.76L6.7 8.27a13.32 13.32 0 005 5l1.08-1.08a1.67 1.67 0 011.76-.38 10.72 10.72 0 002.34.58 1.67 1.67 0 011.43 1.7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                011 265 0105
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-map-col">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></a>
+                <p class="footer-brand-name">National Aluminium Factory Co.</p>
+            </div>
+            <div class="footer-map-frame">
+                <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NAFCO location"></iframe>
+            </div>
+        </div>
+        <div class="footer-info-col">
+            <p class="footer-col-title">Riyadh</p>
+            <div class="footer-info-block"><a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener" class="footer-map-link">Street 3228, Riyadh 14335, Saudi Arabia</a></div>
+            <div class="footer-info-block"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
+            <div class="footer-info-block"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
+            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105">011 265 0105</a></div>
+        </div>
+    </div>
+    <div class="footer-bottom">National Aluminium Factory Co. NAFCO &copy; 2026. All rights reserved.</div>
+    <div class="footer-credit">Developed by Momin Abutayeh</div>
+</footer>
+
+<script src="js/animations.js"></script>
+</body>
+</html>

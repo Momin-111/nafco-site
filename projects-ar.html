@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاريعنا نافكو للألمنيوم</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nav { position: fixed; background: #1c2530; border-bottom-color: rgba(255,255,255,0.1); z-index: 100; }
+        .proj-hero { background: #0f161e; padding: 170px 60px 90px; position: relative; overflow: hidden; }
+        .proj-hero::after { content: ''; position: absolute; inset: 0; background: url('images/testing-tower-day.jpg') center 20%/cover no-repeat; opacity: 0.16; z-index: 0; }
+        .proj-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,22,30,0.4) 0%, #0f161e 90%); z-index: 0; }
+        .proj-hero-inner { position: relative; z-index: 1; max-width: 720px; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.45); font-size: 13px; font-weight: 600; text-decoration: none; margin-bottom: 28px; transition: color 0.2s; }
+        .back-link:hover { color: #fff; }
+        .back-link svg { width: 15px; height: 15px; }
+        .proj-hero-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 14px; }
+        .proj-hero-title { font-size: 42px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+        .proj-hero-sub { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.9; max-width: 600px; }
+        .sec-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 14px; }
+        .sec-title { font-size: 1.8rem; font-weight: 700; color: #1c2530; line-height: 1.4; }
+        .sec-sub { font-size: 0.95rem; color: #666; line-height: 1.9; }
+        .testing-section { background: #ffffff; padding: 90px 60px; }
+        .testing-inner { max-width: 1150px; margin: 0 auto; }
+        .testing-header { max-width: 640px; margin: 0 auto 3.5rem; text-align: center; }
+        .testing-header .sec-label { color: #9b1c2e; }
+        .testing-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; margin-bottom: 24px; }
+        .testing-feature { position: relative; border-radius: 16px; overflow: hidden; min-height: 460px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .testing-feature img,.testing-feature video { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+        .testing-feature-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,22,30,0) 35%, rgba(15,22,30,0.9) 100%); }
+        .testing-feature-content { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.5rem; z-index: 1; }
+        .testing-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(155,28,46,0.9); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 1rem; }
+        .testing-feature-title { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
+        .testing-feature-text { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.8; max-width: 480px; }
+        .testing-stack { display: flex; flex-direction: column; gap: 24px; }
+        .testing-small { position: relative; border-radius: 16px; overflow: hidden; flex: 1; min-height: 218px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+        .testing-small img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: transform 0.5s ease; }
+        .testing-small:hover img { transform: scale(1.06); }
+        .testing-small-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,22,30,0) 40%, rgba(15,22,30,0.88) 100%); }
+        .testing-small-content { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem; z-index: 1; }
+        .testing-small-title { font-size: 1.02rem; font-weight: 700; color: #fff; }
+        .testing-small-sub { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+        .testing-row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .testing-row3 .testing-small { min-height: 260px; }
+        .testing-video-section { margin-top: 3rem; background: #f7f7f6; border-radius: 20px; padding: 3rem; display: grid; grid-template-columns: 320px 1fr; gap: 2.5rem; align-items: center; }
+        .testing-video-block { border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.18); }
+        .testing-video-block video { width: 100%; display: block; }
+        .testing-video-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 12px; }
+        .testing-video-title { font-size: 1.3rem; font-weight: 700; color: #1c2530; line-height: 1.45; margin-bottom: 1rem; }
+        .testing-video-text { font-size: 0.9rem; color: #666; line-height: 1.9; }
+        .testing-video-text strong { color: #1c2530; }
+        @media (max-width: 700px) { .testing-video-section { grid-template-columns: 1fr; padding: 2rem; text-align: center; } .testing-video-block { max-width: 320px; margin: 0 auto; } }
+        .testing-note { margin-top: 2.5rem; display: flex; align-items: flex-start; gap: 1rem; background: #f7f7f6; border-right: 4px solid #9b1c2e; border-radius: 10px 0 0 10px; padding: 1.4rem 1.75rem; }
+        .testing-note-icon { flex-shrink: 0; width: 32px; height: 32px; color: #9b1c2e; margin-top: 2px; }
+        .testing-note-icon svg { width: 100%; height: 100%; }
+        .testing-note-text { font-size: 0.88rem; color: #555; line-height: 1.85; }
+        .testing-note-text strong { color: #1c2530; }
+        .feat-project { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+        .feat-project:nth-child(even) .feat-media { order: -1; }
+        .feat-media { position: relative; overflow: hidden; }
+        .feat-media-main { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .feat-media-strip { position: absolute; bottom: 20px; right: 20px; left: 20px; display: flex; gap: 12px; }
+        .feat-thumb { width: 90px; height: 68px; border-radius: 8px; overflow: hidden; border: 2px solid rgba(255,255,255,0.85); box-shadow: 0 6px 16px rgba(0,0,0,0.25); flex-shrink: 0; }
+        .feat-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .feat-content { padding: 5rem; display: flex; flex-direction: column; justify-content: center; background: #f7f7f6; }
+        .feat-project:nth-child(even) .feat-content { background: #fff; }
+        .feat-city { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 12px; }
+        .feat-title { font-size: 1.8rem; font-weight: 700; color: #1c2530; line-height: 1.4; margin-bottom: 1rem; }
+        .feat-text { font-size: 0.92rem; color: #666; line-height: 1.9; margin-bottom: 1.75rem; }
+        .feat-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .feat-tag { font-size: 0.75rem; font-weight: 600; color: #1c2530; background: rgba(155,28,46,0.08); padding: 0.4rem 0.9rem; border-radius: 20px; }
+        @media (max-width: 1000px) { .feat-project { grid-template-columns: 1fr; min-height: auto; } .feat-project:nth-child(even) .feat-media { order: 0; } .feat-media { height: 340px; } .feat-content { padding: 3rem 2rem; } }
+        .partner-callout { background: #1c2530; padding: 80px 60px; }
+        .partner-callout-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
+        .partner-callout-img { border-radius: 16px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.3); aspect-ratio: 3/4; }
+        .partner-callout-img img { width: 100%; height: 100%; object-fit: cover; }
+        .partner-callout-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 16px; }
+        .partner-callout-title { font-size: 1.7rem; font-weight: 700; color: #fff; line-height: 1.45; margin-bottom: 1.25rem; }
+        .partner-callout-text { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.9; }
+        @media (max-width: 900px) { .partner-callout-inner { grid-template-columns: 1fr; } .partner-callout-img { aspect-ratio: 16/9; } }
+        .landmark-section { background: #ffffff; padding: 90px 60px; }
+        .landmark-inner { max-width: 1150px; margin: 0 auto; }
+        .landmark-header { max-width: 680px; margin: 0 auto 3.5rem; text-align: center; }
+        .proj-cta { background: linear-gradient(135deg, #9b1c2e 0%, #7e1624 100%); padding: 80px 60px; text-align: center; color: #fff; }
+        .proj-cta-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 18px; }
+        .proj-cta-title { font-size: 1.8rem; font-weight: 700; line-height: 1.45; max-width: 700px; margin: 0 auto 2rem; }
+        .proj-cta-btn { display: inline-block; background: #fff; color: #9b1c2e; font-size: 15px; font-weight: 700; padding: 15px 36px; border-radius: 30px; }
+        .proj-cta-btn:hover { background: #f1f1f1; }
+        @media (max-width: 900px) {
+            .proj-hero { padding: 120px 30px 60px; }
+            .proj-hero-title { font-size: 28px; }
+            .testing-section, .partner-callout, .landmark-section, .proj-cta { padding: 50px 30px; }
+            .testing-grid { grid-template-columns: 1fr; }
+            .testing-row3 { grid-template-columns: 1fr; }
+            .feat-content { padding: 2.5rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index-ar.html" class="logo-wrap">
+        <span class="logo-circle"><img src="images/logo.jpg" alt="شعار نافكو"></span>
+        <span class="logo-name">نافكو</span>
+    </a>
+    <ul class="navlinks">
+        <li><a href="index-ar.html">الرئيسية</a></li>
+        <li><a href="about-ar.html">من نحن</a></li>
+        <li><a href="projects-ar.html" style="border-bottom:2px solid #9b1c2e;padding-bottom:3px;">مشاريعنا</a></li>
+        <li><a href="certificates-ar.html">الشهادات</a></li>
+        <li><a href="products-ar.html">المنتجات والخدمات المتخصصة</a></li>
+        <li><a href="contact-ar.html">تواصل معنا</a></li>
+        <li><a href="projects.html">English</a></li>
+    </ul>
+</nav>
+
+<div class="proj-hero">
+    <div class="proj-hero-inner">
+        <a href="index-ar.html" class="back-link">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            الرجوع للرئيسية
+        </a>
+        <p class="proj-hero-label">مشاريعنا</p>
+        <h1 class="proj-hero-title">هندسة موثّقة.<br>ميدانيًا مُثبتة.</h1>
+        <p class="proj-hero-sub">
+            كل نظام واجهة من نافكو يُهندس ويُختبر ويُركّب بنفس المعيار
+            من الاعتماد المخبري المستقل إلى أبراج المملكة الأكثر تطلبًا.
+        </p>
+    </div>
+</div>
+
+<section class="testing-section">
+    <div class="testing-inner">
+        <div class="testing-header">
+            <p class="sec-label">هندسة موثّقة</p>
+            <h2 class="sec-title">مُختبر بشكل مستقل قبل أن يصل الموقع</h2>
+            <p class="sec-sub" style="margin-top:1rem;">
+                تخضع أنظمة الواجهات الزجاجية لدى نافكو لاختبارات أداء كاملة النطاق
+                تسرب الهواء، اختراق الماء الساكن، وتركيب الزجاج الإنشائي
+                بحضور واعتماد استشاريين مستقلين قبل الموافقة على التصنيع لأي مشروع.
+            </p>
+        </div>
+
+        <div class="testing-grid">
+            <div class="testing-feature">
+                <img src="images/testing-tower-night.jpg" alt="برج اختبار الواجهة الزجاجية">
+                <div class="testing-feature-overlay"></div>
+                <div class="testing-feature-content">
+                    <span class="testing-badge">نموذج كامل النطاق</span>
+                    <h3 class="testing-feature-title">نظام واجهة زجاجية كامل، يُختبر كوحدة واحدة</h3>
+                    <p class="testing-feature-text">يُجمّع ويُزجج برج نموذجي كامل الارتفاع تمامًا كما سيكون في الموقع، ثم يخضع لنفس الاختبارات المخبرية المطلوبة لاعتماد المشروع.</p>
+                </div>
+            </div>
+            <div class="testing-stack">
+                <div class="testing-small">
+                    <img src="images/testing-air-leakage.jpg" alt="اختبار تسرب الهواء">
+                    <div class="testing-small-overlay"></div>
+                    <div class="testing-small-content">
+                        <div class="testing-small-title">اختبار تسرب الهواء</div>
+                        <div class="testing-small-sub">التحقق من الإحكام تحت الضغط</div>
+                    </div>
+                </div>
+                <div class="testing-small">
+                    <img src="images/testing-water-test.jpg" alt="اختبار اختراق الماء الساكن">
+                    <div class="testing-small-overlay"></div>
+                    <div class="testing-small-content">
+                        <div class="testing-small-title">اختبار الماء الساكن 720 باسكال</div>
+                        <div class="testing-small-sub">مقاومة اختراق الماء تحت الحمل</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testing-row3">
+            <div class="testing-small">
+                <img src="images/testing-glazing-install.jpg" alt="تركيب الزجاج">
+                <div class="testing-small-overlay"></div>
+                <div class="testing-small-content">
+                    <div class="testing-small-title">تركيب زجاجي دقيق</div>
+                    <div class="testing-small-sub">ألواح مرفوعة بالتفريغ، بدقة متناهية</div>
+                </div>
+            </div>
+            <div class="testing-small">
+                <img src="images/testing-tower-glazed.jpg" alt="برج مكتمل التزجيج">
+                <div class="testing-small-overlay"></div>
+                <div class="testing-small-content">
+                    <div class="testing-small-title">نموذج مكتمل التزجيج</div>
+                    <div class="testing-small-sub">جاهز للاعتماد المخبري</div>
+                </div>
+            </div>
+            <div class="testing-small">
+                <img src="images/testing-consultant-team.jpg" alt="استشاريو الاختبار المستقلون بالموقع">
+                <div class="testing-small-overlay"></div>
+                <div class="testing-small-content">
+                    <div class="testing-small-title">بشهادة مستقلة</div>
+                    <div class="testing-small-sub">استشاريو الاختبار حاضرون بالموقع طوال الوقت</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testing-video-section">
+            <div class="testing-video-block">
+                <video src="videos/testing-combined.mp4" poster="images/testing-video-poster.jpg" controls playsinline></video>
+            </div>
+            <div>
+                <p class="testing-video-label">شاهد العملية</p>
+                <h3 class="testing-video-title">من رفع الرافعة إلى التركيب المعتمد، من البداية للنهاية</h3>
+                <p class="testing-video-text">
+                    يستعرض هذا المقطع دورة اختبار كاملة للواجهة الزجاجية على البرج النموذجي:
+                    <strong>الرافعة الفراغية وهي ترفع كل لوح زجاجي لموضعه</strong>،
+                    <strong>تثبيت اللوح وإحكام إغلاقه</strong>، ثم مرور البرج بـ
+                    <strong>اختبار تسرب الهواء</strong> و<strong>اختبار الماء الساكن عند 720 باسكال</strong>،
+                    كل ذلك بحضور استشاريي اختبار مستقلين قبل اعتماد النظام لأي مشروع.
+                </p>
+            </div>
+        </div>
+
+        <div class="testing-note">
+            <div class="testing-note-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="testing-note-text">
+                <strong>معتمد بشكل مستقل.</strong> يعمل برنامج اختبار الواجهات لدى نافكو بالتوازي
+                مع اعتماد إدارة الجودة ISO&nbsp;9001:2015 ليمنح الاستشاريين والعملاء
+                بيانات أداء موثقة قبل بدء التركيب. طّلع على <a href="certificates-ar.html" style="color:#9b1c2e;font-weight:600;">شهاداتنا ومعاييرنا</a>.
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="feat-project">
+    <div class="feat-media">
+        <img class="feat-media-main" src="images/project-makkah-tower-1.jpg" alt="برج ضيافة بارز، مكة المكرمة">
+        <div class="feat-media-strip">
+            <div class="feat-thumb"><img src="images/project-makkah-tower-2.jpg" alt="تفصيل برج مكة"></div>
+            <div class="feat-thumb"><img src="images/project-makkah-tower-3.jpg" alt="واجهة برج مكة"></div>
+        </div>
+    </div>
+    <div class="feat-content">
+        <p class="feat-city">مكة المكرمة</p>
+        <h2 class="feat-title">برج ضيافة بارز</h2>
+        <p class="feat-text">
+            برج ضيافة واسع النطاق يرتفع في محيط الحرم الشريف بمكة المكرمة
+            من أكثر بيئات الواجهات تطلبًا تقنيًا في المملكة، حيث الدقة
+            والمتانة واعتماد الأداء من طرف ثالث أمور غير قابلة للتفاوض.
+        </p>
+        <div class="feat-tags">
+            <span class="feat-tag">واجهة أبراج شاهقة</span>
+            <span class="feat-tag">واجهة زجاجية</span>
+            <span class="feat-tag">ضيافة</span>
+        </div>
+    </div>
+</div>
+
+<div class="feat-project">
+    <div class="feat-media">
+        <img class="feat-media-main" src="images/project-jeddah-tower-1.jpg" alt="برج تجاري قيد الإنشاء، جدة">
+        <div class="feat-media-strip">
+            <div class="feat-thumb"><img src="images/project-jeddah-tower-2.jpg" alt="تفصيل برج جدة"></div>
+        </div>
+    </div>
+    <div class="feat-content">
+        <p class="feat-city">جدة</p>
+        <h2 class="feat-title">مشروع برج تجاري</h2>
+        <p class="feat-text">
+            برج تجاري متعدد الطوابق على أفق جدة سريع التطور، مُهندس
+            لمواجهة مناخ المنطقة الساحلية الصعب من حرارة ورطوبة وتعرض للأملاح.
+        </p>
+        <div class="feat-tags">
+            <span class="feat-tag">برج تجاري</span>
+            <span class="feat-tag">أنظمة الواجهات</span>
+            <span class="feat-tag">هندسة ساحلية</span>
+        </div>
+    </div>
+</div>
+
+<section class="partner-callout">
+    <div class="partner-callout-inner">
+        <div class="partner-callout-img">
+            <img src="images/partner-hilti-training.jpg" alt="تدريب منتجات هيلتي بالموقع">
+        </div>
+        <div>
+            <p class="partner-callout-label">شركاء موثوقون، في الميدان</p>
+            <h2 class="partner-callout-title">شراكات عالمية تظهر بالميدان لا على الورق فقط</h2>
+            <p class="partner-callout-text">
+                تتدرب فرق التركيب لدى نافكو مباشرة مع شركاء الأنظمة. هنا، يقوم أخصائي
+                من هيلتي بتدريب عملي على التثبيت وأنظمة المرابط مع طاقم موقعنا
+                نفس الشراكة التي تزوّدنا بأنظمة التثبيت خلف تركيبات واجهاتنا.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="landmark-section">
+    <div class="landmark-inner">
+        <div class="landmark-header">
+            <p class="sec-label">معالم مكتملة</p>
+            <h2 class="sec-title">موثوقون في أعقد مشاريع السعودية</h2>
+        </div>
+        <div class="projects-grid">
+            <a href="#" class="project-tile">
+                <span class="project-tile-bg" style="background-image:url('images/project-majdoul.jpg')"></span>
+                <span class="project-tile-info">
+<span class="project-tile-city">الرياض</span>
+<span class="project-tile-name">برج المجدول</span>
+<span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
+</span>
+            </a>
+            <a href="#" class="project-tile">
+                <span class="project-tile-bg" style="background-image:url('images/project-habib-hospital.jpg')"></span>
+                <span class="project-tile-info">
+<span class="project-tile-city">جدة</span>
+<span class="project-tile-name">مستشفى الدكتور سليمان الحبيب</span>
+<span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
+</span>
+            </a>
+            <a href="#" class="project-tile">
+                <span class="project-tile-bg" style="background-image:url('images/project-sabb-hq.jpg')"></span>
+                <span class="project-tile-info">
+<span class="project-tile-city">الرياض</span>
+<span class="project-tile-name">المركز الرئيسي لبنك ساب</span>
+<span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
+</span>
+            </a>
+            <a href="#" class="project-tile">
+                <span class="project-tile-bg" style="background-image:url('images/project-four-seasons.jpg')"></span>
+                <span class="project-tile-info">
+<span class="project-tile-city">جدة</span>
+<span class="project-tile-name">فندق فور سيزونز</span>
+<span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
+</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="proj-cta">
+    <p class="proj-cta-label">ابدأ مشروعك</p>
+    <h2 class="proj-cta-title">جاهز لوضع واجهتك القادمة على المحك؟</h2>
+    <a href="contact-ar.html" class="proj-cta-btn">تواصل مع فريقنا</a>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-map-col">
+            <div class="footer-brand">
+                <a href="index-ar.html" class="logo-circle"><img src="images/logo.jpg" alt="شعار نافكو"></a>
+                <p class="footer-brand-name">الشركة الأهلية للألمنيوم</p>
+            </div>
+            <div class="footer-map-frame">
+                <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع نافكو"></iframe>
+            </div>
+        </div>
+        <div class="footer-info-col">
+            <p class="footer-col-title">الرياض</p>
+            <div class="footer-info-block"><a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener" class="footer-map-link">شارع 3228، الرياض 14335، المملكة العربية السعودية</a></div>
+            <div class="footer-info-block"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
+            <div class="footer-info-block"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
+            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105">011 265 0105</a></div>
+        </div>
+    </div>
+    <div class="footer-bottom">الشركة الأهلية للألمنيوم نافكو &copy; 2026. جميع الحقوق محفوظة.</div>
+    <div class="footer-credit">تم تطويره بواسطة Momin Abutayeh</div>
+</footer>
+
+<script src="js/animations.js"></script>
+</body>
+</html>

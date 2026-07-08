@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us NAFCO Aluminium</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .nav { position: fixed; background: #1c2530; border-bottom-color: rgba(255,255,255,0.1); }
+    .contact-hero { background: #1c2530; padding: 160px 60px 90px; position: relative; overflow: hidden; }
+    .contact-hero::after { content: ''; position: absolute; inset: 0; background: url('images/hero-1.jpg') center/cover no-repeat; opacity: 0.06; z-index: 0; }
+    .contact-hero-inner { position: relative; z-index: 1; max-width: 600px; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.4); font-size: 13px; font-weight: 600; text-decoration: none; margin-bottom: 28px; transition: color 0.2s; }
+    .back-link:hover { color: #fff; }
+    .back-link svg { width: 15px; height: 15px; }
+    .hero-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 14px; }
+    .hero-title { font-size: 46px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 16px; }
+    .hero-sub { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+    .contact-main { background: #f7f7f6; padding: 0 60px 90px; }
+    .contact-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; position: relative; top: -50px; }
+    .form-card { background: #fff; border-radius: 16px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+    .form-card-title { font-size: 1.3rem; font-weight: 700; color: #1c2530; margin-bottom: 0.4rem; }
+    .form-card-sub { font-size: 0.85rem; color: #888; margin-bottom: 2rem; line-height: 1.6; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-group label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #aaa; }
+    .form-group input, .form-group textarea, .form-group select { padding: 0.8rem 1rem; border: 1.5px solid #e8e8e8; border-radius: 8px; font-size: 0.9rem; color: #1c2530; font-family: inherit; background: #fff; transition: border-color 0.2s, box-shadow 0.2s; outline: none; width: 100%; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: #9b1c2e; box-shadow: 0 0 0 3px rgba(155,28,46,0.08); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { cursor: pointer; }
+    .submit-btn { width: 100%; background: #9b1c2e; color: #fff; border: none; padding: 1rem 2rem; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; letter-spacing: 0.04em; transition: background 0.2s, transform 0.15s; display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-top: 0.5rem; }
+    .submit-btn svg { width: 18px; height: 18px; }
+    .submit-btn:hover { background: #7e1624; transform: translateY(-1px); }
+    .submit-btn:active { transform: translateY(0); }
+    .form-success { display: none; text-align: center; padding: 2rem; }
+    .form-success-icon { width: 60px; height: 60px; background: rgba(26,122,60,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+    .form-success-icon svg { width: 28px; height: 28px; color: #1a7a3c; }
+    .info-panel { display: flex; flex-direction: column; gap: 1.25rem; }
+    .info-map { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.1); height: 240px; flex-shrink: 0; }
+    .info-map iframe { width: 100%; height: 100%; border: none; display: block; }
+    .info-card { background: #fff; border-radius: 12px; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: transform 0.2s; }
+    .info-card:hover { transform: translateY(-2px); }
+    .info-card-icon { width: 42px; height: 42px; background: rgba(155,28,46,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .info-card-icon svg { width: 20px; height: 20px; color: #9b1c2e; }
+    .info-card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #bbb; margin-bottom: 4px; }
+    .info-card-value { font-size: 0.9rem; color: #1c2530; font-weight: 600; line-height: 1.5; }
+    .info-card-value a { color: #1c2530; text-decoration: none; transition: color 0.2s; }
+    .info-card-value a:hover { color: #9b1c2e; }
+    .dept-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .dept-card { background: #fff; border-radius: 12px; padding: 1.25rem; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-left: 3px solid #9b1c2e; }
+    .dept-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9b1c2e; margin-bottom: 6px; }
+    .dept-email { font-size: 0.82rem; color: #1c2530; font-weight: 600; }
+    .dept-email a { color: #1c2530; text-decoration: none; }
+    .dept-email a:hover { color: #9b1c2e; }
+    @media (max-width: 1000px) { .contact-grid { grid-template-columns: 1fr; top: -30px; } .info-panel { order: -1; } }
+    @media (max-width: 768px) {
+      .contact-hero { padding: 120px 30px 70px; }
+      .hero-title { font-size: 30px; }
+      .contact-main { padding: 0 20px 60px; }
+      .form-card { padding: 2rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .dept-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="logo-wrap">
+    <span class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></span>
+    <span class="logo-name">NAFCO</span>
+  </a>
+  <ul class="navlinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About us</a></li>
+    <li><a href="projects.html">Our Projects</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="products.html">Professional Products and Services</a></li>
+    <li><a href="contact.html" style="border-bottom:2px solid #9b1c2e;padding-bottom:3px;">Contact us</a></li>
+    <li><a href="contact-ar.html">العربية</a></li>
+  </ul>
+</nav>
+
+<div class="contact-hero">
+  <div class="contact-hero-inner">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Home
+    </a>
+    <p class="hero-label">Get in Touch</p>
+    <h1 class="hero-title">Let's Engineer<br>Something Together</h1>
+    <p class="hero-sub">Tell us about your project our team will get back to you within one business day.</p>
+  </div>
+</div>
+
+<div class="contact-main">
+  <div class="contact-grid">
+
+    <div class="form-card">
+      <div class="form-card-title">Send us a message</div>
+      <div class="form-card-sub">Fill in the details below and one of our specialists will be in touch.</div>
+
+      <form id="contact-form" action="mailto:sales@alunafco.com" method="POST" enctype="text/plain" onsubmit="handleSubmit(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="company" placeholder="Company name">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" name="phone" placeholder="+966 5x xxx xxxx" required>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Project Type</label>
+          <select name="project_type">
+            <option value="" disabled selected>Select project type</option>
+            <option>High-Rise Tower / Curtain Wall</option>
+            <option>Commercial Building Facade</option>
+            <option>Hospitality / Hotel</option>
+            <option>Healthcare Facility</option>
+            <option>Residential Complex</option>
+            <option>Infrastructure</option>
+            <option>Aluminium Extrusion Supply</option>
+            <option>Kitchens</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea name="message" placeholder="Tell us about your project scope, location, timeline, and any specific requirements..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M3 10l14-7-7 14V10H3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Send Message
+        </button>
+
+      </form>
+
+      <div class="form-success" id="form-success">
+        <div class="form-success-icon">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:#1c2530;margin-bottom:8px;">Message Sent</h3>
+        <p style="font-size:0.85rem;color:#888;line-height:1.6;">Thank you for reaching out. Our team will respond within one business day.</p>
+      </div>
+    </div>
+
+    <div class="info-panel">
+
+      <div class="info-map">
+        <iframe
+                src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near"
+                allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="NAFCO location">
+        </iframe>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div>
+          <div class="info-card-label">Address</div>
+          <div class="info-card-value">
+            <a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank">
+              Street 3228, 2nd Industrial Area<br>Riyadh 14335, Saudi Arabia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .92h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="info-card-label">Phone</div>
+          <div class="info-card-value">
+            <a href="tel:+9660112650105">011 265 0105</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept-row">
+        <div class="dept-card">
+          <div class="dept-label">Sales</div>
+          <div class="dept-email"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
+        </div>
+        <div class="dept-card">
+          <div class="dept-label">Costing</div>
+          <div class="dept-email"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-map-col">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></a>
+        <p class="footer-brand-name">National Aluminium Factory Co.</p>
+      </div>
+      <div class="footer-map-frame">
+        <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NAFCO location"></iframe>
+      </div>
+    </div>
+    <div class="footer-info-col">
+      <p class="footer-col-title">Riyadh</p>
+      <div class="footer-info-block"><a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener" class="footer-map-link">Street 3228, Riyadh 14335, Saudi Arabia</a></div>
+      <div class="footer-info-block"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
+      <div class="footer-info-block"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
+      <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105">011 265 0105</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">National Aluminium Factory Co. NAFCO &copy; 2026. All rights reserved.</div>
+  <div class="footer-credit">Developed by Momin Abutayeh</div>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    var form = document.getElementById('contact-form');
+    var success = document.getElementById('form-success');
+    var data = new FormData(form);
+    var name = data.get('name');
+    var email = data.get('email');
+    var phone = data.get('phone');
+    var company = data.get('company') || 'N/A';
+    var type = data.get('project_type') || 'N/A';
+    var message = data.get('message');
+    var subject = encodeURIComponent('Project Inquiry from ' + name + ' NAFCO Website');
+    var body = encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Company: ' + company + '\n' +
+            'Phone: ' + phone + '\n' +
+            'Email: ' + email + '\n' +
+            'Project Type: ' + type + '\n\n' +
+            'Message:\n' + message
+    );
+    window.location.href = 'mailto:sales@alunafco.com?subject=' + subject + '&body=' + body;
+    form.style.display = 'none';
+    success.style.display = 'block';
+  }
+</script>
+
+<script src="js/animations.js"></script>
+</body>
+</html>
