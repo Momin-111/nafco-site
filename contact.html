@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contact Us NAFCO Aluminium</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -70,7 +72,8 @@
     <span class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></span>
     <span class="logo-name">NAFCO</span>
   </a>
-  <ul class="navlinks">
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <ul class="navlinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About us</a></li>
     <li><a href="projects.html">Our Projects</a></li>
@@ -179,7 +182,7 @@
         <div>
           <div class="info-card-label">Address</div>
           <div class="info-card-value">
-            <a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank">
+            <a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener">
               Street 3228, 2nd Industrial Area<br>Riyadh 14335, Saudi Arabia
             </a>
           </div>

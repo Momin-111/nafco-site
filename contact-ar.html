@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>تواصل معنا نافكو للألمنيوم</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -70,7 +72,8 @@
         <span class="logo-circle"><img src="images/logo.jpg" alt="شعار نافكو"></span>
         <span class="logo-name">نافكو</span>
     </a>
-    <ul class="navlinks">
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+        <ul class="navlinks">
         <li><a href="index-ar.html">الرئيسية</a></li>
         <li><a href="about-ar.html">من نحن</a></li>
         <li><a href="projects-ar.html">مشاريعنا</a></li>
@@ -179,7 +182,7 @@
                 <div>
                     <div class="info-card-label">العنوان</div>
                     <div class="info-card-value">
-                        <a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener">
                             شارع 3228، المدينة الصناعية الثانية<br>الرياض 14335، المملكة العربية السعودية
                         </a>
                     </div>
