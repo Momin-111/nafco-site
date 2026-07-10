@@ -3,55 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>About Us NAFCO Aluminium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .nav { position: fixed; background: #1c2530; border-bottom-color: rgba(255,255,255,0.1); }
-        .page-hero { background: #1c2530; padding: 160px 60px 80px; position: relative; overflow: hidden; }
-        .page-hero::after { content: ''; position: absolute; inset: 0; background: url('images/hero-1.jpg') center/cover no-repeat; opacity: 0.08; z-index: 0; }
+        .page-hero {
+            background: #0f161e;
+            padding: 190px 60px 130px;
+            position: relative;
+            overflow: hidden;
+            min-height: 62vh;
+            display: flex;
+            align-items: flex-end;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/factory-11.jpg') center/cover no-repeat;
+            z-index: 0;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 30%, rgba(15,22,30,0.25) 0%, rgba(15,22,30,0.72) 68%, rgba(15,22,30,0.92) 100%),
+                linear-gradient(180deg, rgba(15,22,30,0.75) 0%, rgba(15,22,30,0.2) 38%, rgba(15,22,30,0.95) 100%);
+            z-index: 0;
+        }
         .page-hero-inner { position: relative; z-index: 1; max-width: 760px; }
-        .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.45); font-size: 13px; font-weight: 600; text-decoration: none; margin-bottom: 28px; transition: color 0.2s; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 600; text-decoration: none; margin-bottom: 28px; transition: color 0.2s; }
         .back-link:hover { color: #fff; }
         .back-link svg { width: 15px; height: 15px; }
-        .page-hero-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 14px; }
-        .page-hero-title { font-size: 46px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 20px; }
-        .page-hero-sub { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 580px; }
-        .stats-band { background: #9b1c2e; padding: 50px 60px; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
-        .stat-item { border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1.5rem; }
-        .stat-number { font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 0.4rem; }
-        .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); font-weight: 500; line-height: 1.4; }
-        .about-section { background: #ffffff; padding: 90px 60px; }
+        .page-hero-label { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #e8b4bb; margin-bottom: 20px; }
+        .page-hero-label::before { content: ''; width: 28px; height: 2px; background: #9b1c2e; display: inline-block; }
+        .page-hero-title { font-size: 58px; font-weight: 800; color: #fff; line-height: 1.08; margin-bottom: 24px; letter-spacing: -0.01em; }
+        .page-hero-sub { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.85; max-width: 580px; }
+        .stats-band { background: transparent; padding: 0 60px; position: relative; z-index: 2; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            max-width: 1100px;
+            margin: -64px auto 0;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 30px 70px rgba(15,22,30,0.22);
+            overflow: hidden;
+        }
+        .stat-item { border-left: 1px solid #ececea; padding: 2.25rem 1.75rem; }
+        .stat-item:first-child { border-left: none; }
+        .stat-number { font-size: 2.6rem; font-weight: 800; color: #9b1c2e; line-height: 1; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .stat-label { font-size: 0.82rem; color: #667; font-weight: 500; line-height: 1.4; }
+        .about-section { background: #ffffff; padding: 150px 60px 90px; }
         .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .about-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 16px; }
-        .about-title { font-size: 2rem; font-weight: 700; color: #1c2530; line-height: 1.3; margin-bottom: 1.5rem; }
+        .about-title { font-size: 2.1rem; font-weight: 800; color: #1c2530; line-height: 1.28; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
         .about-text { font-size: 0.95rem; color: #555; line-height: 1.9; margin-bottom: 1rem; }
-        .about-img-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.15); aspect-ratio: 4/3; }
-        .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .about-img-wrap:hover img { transform: scale(1.04); }
+        .about-img-wrap { position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 30px 70px rgba(15,22,30,0.18); aspect-ratio: 4/3; }
+        .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+        .about-img-wrap:hover img { transform: scale(1.05); }
+        .about-img-badge {
+            position: absolute;
+            left: 24px; bottom: 24px;
+            background: rgba(15,22,30,0.85);
+            backdrop-filter: blur(6px);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .about-img-badge b { font-size: 1.5rem; font-weight: 800; color: #e8b4bb; }
+        .about-img-badge span { font-size: 0.78rem; color: rgba(255,255,255,0.7); letter-spacing: 0.03em; }
         .capabilities { background: #f7f7f6; padding: 90px 60px; }
         .capabilities-inner { max-width: 1100px; margin: 0 auto; }
         .section-header { text-align: center; max-width: 640px; margin: 0 auto 4rem; }
         .section-header .about-label { display: block; }
         .section-header .about-title { font-size: 1.75rem; }
         .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .cap-card { background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid #eee; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .cap-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-        .cap-icon { width: 48px; height: 48px; background: rgba(155,28,46,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+        .cap-card { position: relative; background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid #eee; box-shadow: 0 2px 10px rgba(20,24,30,0.04); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); overflow: hidden; }
+        .cap-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #9b1c2e, #c9a24b); transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+        .cap-card:hover::before { transform: scaleX(1); }
+        .cap-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(20,24,30,0.1); }
+        .cap-num { position: absolute; top: 12px; right: 20px; font-size: 3.2rem; font-weight: 800; color: #f7f7f6; line-height: 1; z-index: 0; }
+        .cap-icon { width: 48px; height: 48px; background: rgba(155,28,46,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; position: relative; z-index: 1; }
         .cap-icon svg { width: 24px; height: 24px; color: #9b1c2e; }
-        .cap-title { font-size: 1rem; font-weight: 700; color: #1c2530; margin-bottom: 0.5rem; }
-        .cap-text { font-size: 0.85rem; color: #777; line-height: 1.7; }
+        .cap-title { font-size: 1rem; font-weight: 700; color: #1c2530; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+        .cap-text { font-size: 0.85rem; color: #777; line-height: 1.7; position: relative; z-index: 1; }
         .projects-wall { background: #1c2530; padding: 90px 60px; }
         .projects-wall-inner { max-width: 1100px; margin: 0 auto; }
-        .pw-header { margin-bottom: 3rem; }
+        .pw-header { margin-bottom: 3rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+        .pw-header-count { text-align: right; flex-shrink: 0; }
+        .pw-header-count b { font-size: 3rem; font-weight: 800; color: #9b1c2e; line-height: 1; display: block; }
+        .pw-header-count span { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
         .pw-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
         .pw-title { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
         .pw-sub { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 560px; }
         .pw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 12px; overflow: hidden; }
-        .pw-item { background: #1c2530; padding: 1.5rem 1.75rem; transition: background 0.2s; }
+        .pw-item { position: relative; background: #1c2530; padding: 1.5rem 1.75rem; transition: background 0.3s cubic-bezier(0.16,1,0.3,1); }
+        .pw-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: linear-gradient(180deg, #9b1c2e, #c9a24b); transition: width 0.3s cubic-bezier(0.16,1,0.3,1); }
         .pw-item:hover { background: rgba(155,28,46,0.15); }
+        .pw-item:hover::before { width: 3px; }
         .pw-item-dot { width: 6px; height: 6px; border-radius: 50%; background: #9b1c2e; margin-bottom: 0.75rem; }
         .pw-item-name { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.4; }
         .pw-item-type { font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 4px; }
@@ -61,9 +121,10 @@
         .dev-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #9b1c2e; margin-bottom: 16px; }
         .dev-title { font-size: 1.75rem; font-weight: 700; color: #1c2530; line-height: 1.3; margin-bottom: 1rem; }
         .dev-text { font-size: 0.9rem; color: #666; line-height: 1.8; }
-        .dev-list { display: flex; flex-direction: column; gap: 1rem; }
-        .dev-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.5rem; border-radius: 10px; border: 1px solid #eee; transition: border-color 0.2s, box-shadow 0.2s; }
-        .dev-item:hover { border-color: #9b1c2e; box-shadow: 0 4px 16px rgba(155,28,46,0.08); }
+        .dev-list { display: flex; flex-direction: column; gap: 1rem; position: relative; }
+        .dev-list::before { content: ''; position: absolute; left: 31px; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(180deg, rgba(155,28,46,0.25), rgba(155,28,46,0.04)); }
+        .dev-item { position: relative; display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.5rem; border-radius: 10px; border: 1px solid #eee; background: #fff; transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1); }
+        .dev-item:hover { border-color: #9b1c2e; box-shadow: 0 16px 36px rgba(155,28,46,0.1); transform: translateX(6px); }
         .dev-num { font-size: 1.4rem; font-weight: 800; color: rgba(155,28,46,0.2); line-height: 1; flex-shrink: 0; width: 32px; }
         .dev-item-title { font-size: 0.92rem; font-weight: 700; color: #1c2530; margin-bottom: 4px; }
         .dev-item-text { font-size: 0.83rem; color: #777; line-height: 1.6; }
@@ -80,6 +141,13 @@
             .about-inner, .dev-inner, .location-inner { grid-template-columns: 1fr; gap: 40px; }
             .cap-grid { grid-template-columns: 1fr; }
             .pw-grid { grid-template-columns: 1fr 1fr; }
+            .pw-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .pw-header-count { text-align: left; }
+            .page-hero-title { font-size: 32px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); margin-top: -40px; }
+            .stat-item { border-left: none; border-top: 1px solid #ececea; padding: 1.5rem; }
+            .stat-item:first-child, .stat-item:nth-child(2) { border-top: none; }
+            .about-section { padding: 90px 30px; }
         }
         @media (max-width: 560px) {
             .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -137,7 +205,10 @@
             <p class="about-text">Today, NAFCO operates seven fully integrated specialized factories employing over 1,300 engineers, fabricators, and skilled professionals. Our team brings decades of hands-on experience to every project precision curtain walls, structural facades, high-rise cladding, and complex aluminium systems that define the modern Saudi skyline.</p>
             <p class="about-text">With deep roots in Riyadh's industrial landscape and a proven track record across the Kingdom's most ambitious infrastructure projects, NAFCO stands as the trusted partner for clients who demand engineering-grade performance on technically complex builds.</p>
         </div>
-        <div class="about-img-wrap"><img src="images/quality-control.jpg" alt="NAFCO Factory Operations"></div>
+        <div class="about-img-wrap">
+            <img src="images/quality-control.jpg" alt="NAFCO Factory Operations">
+            <div class="about-img-badge"><b>1971</b><span>Founded in<br>Riyadh, KSA</span></div>
+        </div>
     </div>
 </section>
 <section class="capabilities">
@@ -147,21 +218,24 @@
             <h2 class="about-title">Seven factories, one integrated capability</h2>
         </div>
         <div class="cap-grid">
-            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20V8l8-5 8 5v12"/><rect x="9" y="13" width="6" height="7"/></svg></div><div class="cap-title">Aluminium Extrusion</div><div class="cap-text">Custom profiles extruded to exact structural and architectural specifications, using European aluminium systems adopted from international markets.</div></div>
-            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 014 0v2"/></svg></div><div class="cap-title">Facade &amp; Curtain Wall Systems</div><div class="cap-text">High-performance facade systems for towers and landmark buildings, including unitised curtain walls, cladding, and high-tech glazing assemblies.</div></div>
-            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="cap-title">Doors &amp; Windows Fabrication</div><div class="cap-text">Precision-fabricated aluminium doors and window systems for residential compounds, commercial towers, and hospitality projects across the Kingdom.</div></div>
-            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div><div class="cap-title">Powder Coating &amp; Anodizing</div><div class="cap-text">Industrial finishing services with expanded coating factories equipped with new furnaces supporting the full range of contemporary coating systems in the market.</div></div>
-            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h7"/><circle cx="17" cy="18" r="3"/><path d="M17 15v3l2 1"/></svg></div><div class="cap-title">Kitchen Manufacturing</div><div class="cap-text">Complete aluminium kitchen systems for large-scale residential and hospitality projects, with active export markets established beyond Saudi Arabia.</div></div>
-            <div class="cap-card"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="cap-title">Quality Management</div><div class="cap-text">ISO 9001:2015 certified for the design, fabrication, assembly and installation of facade works independently re-audited in 2026 with zero corrective actions.</div></div>
+            <div class="cap-card"><span class="cap-num">01</span><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20V8l8-5 8 5v12"/><rect x="9" y="13" width="6" height="7"/></svg></div><div class="cap-title">Aluminium Extrusion</div><div class="cap-text">Custom profiles extruded to exact structural and architectural specifications, using European aluminium systems adopted from international markets.</div></div>
+            <div class="cap-card"><span class="cap-num">02</span><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 014 0v2"/></svg></div><div class="cap-title">Facade &amp; Curtain Wall Systems</div><div class="cap-text">High-performance facade systems for towers and landmark buildings, including unitised curtain walls, cladding, and high-tech glazing assemblies.</div></div>
+            <div class="cap-card"><span class="cap-num">03</span><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="cap-title">Doors &amp; Windows Fabrication</div><div class="cap-text">Precision-fabricated aluminium doors and window systems for residential compounds, commercial towers, and hospitality projects across the Kingdom.</div></div>
+            <div class="cap-card"><span class="cap-num">04</span><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div><div class="cap-title">Powder Coating &amp; Anodizing</div><div class="cap-text">Industrial finishing services with expanded coating factories equipped with new furnaces supporting the full range of contemporary coating systems in the market.</div></div>
+            <div class="cap-card"><span class="cap-num">05</span><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h7"/><circle cx="17" cy="18" r="3"/><path d="M17 15v3l2 1"/></svg></div><div class="cap-title">Kitchen Manufacturing</div><div class="cap-text">Complete aluminium kitchen systems for large-scale residential and hospitality projects, with active export markets established beyond Saudi Arabia.</div></div>
+            <div class="cap-card"><span class="cap-num">06</span><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="cap-title">Quality Management</div><div class="cap-text">ISO 9001:2015 certified for the design, fabrication, assembly and installation of facade works independently re-audited in 2026 with zero corrective actions.</div></div>
         </div>
     </div>
 </section>
 <section class="projects-wall">
     <div class="projects-wall-inner">
         <div class="pw-header">
-            <p class="pw-label">Landmark Projects</p>
-            <h2 class="pw-title">Proven on Saudi Arabia's most complex builds</h2>
-            <p class="pw-sub">From Riyadh's metro infrastructure to the Kingdom's tallest towers, NAFCO has delivered aluminium works on the projects that define modern Saudi Arabia.</p>
+            <div>
+                <p class="pw-label">Landmark Projects</p>
+                <h2 class="pw-title">Proven on Saudi Arabia's most complex builds</h2>
+                <p class="pw-sub">From Riyadh's metro infrastructure to the Kingdom's tallest towers, NAFCO has delivered aluminium works on the projects that define modern Saudi Arabia.</p>
+            </div>
+            <div class="pw-header-count"><b>12</b><span>Featured Projects</span></div>
         </div>
         <div class="pw-grid">
             <div class="pw-item"><div class="pw-item-dot"></div><div class="pw-item-name">Riyadh Metro</div><div class="pw-item-type">Infrastructure Riyadh</div></div>
@@ -203,21 +277,21 @@
             <p class="about-text">NAFCO's seven factories are located in the Second Industrial Area of Riyadh Saudi Arabia's manufacturing hub. This strategic position enables rapid deployment across the Kingdom and seamless logistics for large-scale project delivery.</p>
             <p class="about-text" style="margin-top:0.5rem"><strong style="color:#1c2530">Address:</strong> 2nd Industrial Area, P.O. Box 42204, Riyadh 11541, Kingdom of Saudi Arabia</p>
         </div>
-        <div class="location-map"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NAFCO location"></iframe></div>
+        <div class="location-map"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" title="NAFCO location"></iframe></div>
     </div>
 </section>
 <footer class="site-footer">
     <div class="footer-top">
         <div class="footer-map-col">
             <div class="footer-brand"><a href="index.html" class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></a><p class="footer-brand-name">National Aluminium Factory Co.</p></div>
-            <div class="footer-map-frame"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NAFCO location"></iframe></div>
+            <div class="footer-map-frame"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" title="NAFCO location"></iframe></div>
         </div>
         <div class="footer-info-col">
             <p class="footer-col-title">Riyadh</p>
             <div class="footer-info-block"><a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener" class="footer-map-link">Street 3228, Riyadh 14335, Saudi Arabia</a></div>
             <div class="footer-info-block"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
             <div class="footer-info-block"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
-            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105">011 265 0105</a></div>
+            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105" dir="ltr">011 265 0105</a></div>
         </div>
     </div>
     <div class="footer-bottom">National Aluminium Factory Co. NAFCO &copy; 2026. All rights reserved.</div>

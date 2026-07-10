@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Certificates NAFCO Aluminium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .nav { position: fixed; background: #1c2530; border-bottom-color: rgba(255,255,255,0.1); }
@@ -24,8 +27,8 @@
 
         .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; }
 
-        .cert-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.07); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(0,0,0,0.12); }
+        .cert-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); display: flex; flex-direction: column; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
+        .cert-card:hover { transform: translateY(-7px); box-shadow: 0 28px 56px rgba(0,0,0,0.14); }
 
         .cert-card-img-wrap { position: relative; cursor: zoom-in; overflow: hidden; }
         .cert-card-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid #eee; transition: transform 0.3s ease; }
@@ -144,14 +147,14 @@
     <div class="footer-top">
         <div class="footer-map-col">
             <div class="footer-brand"><a href="index.html" class="logo-circle"><img src="images/logo.jpg" alt="NAFCO logo"></a><p class="footer-brand-name">National Aluminium Factory Co.</p></div>
-            <div class="footer-map-frame"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NAFCO location"></iframe></div>
+            <div class="footer-map-frame"><iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" title="NAFCO location"></iframe></div>
         </div>
         <div class="footer-info-col">
             <p class="footer-col-title">Riyadh</p>
             <div class="footer-info-block"><a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener" class="footer-map-link">Street 3228, Riyadh 14335, Saudi Arabia</a></div>
             <div class="footer-info-block"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
             <div class="footer-info-block"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
-            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105">011 265 0105</a></div>
+            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105" dir="ltr">011 265 0105</a></div>
         </div>
     </div>
     <div class="footer-bottom">National Aluminium Factory Co. NAFCO &copy; 2026. All rights reserved.</div>

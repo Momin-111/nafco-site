@@ -18,10 +18,49 @@ body {
   font-family: 'Manrope', 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
   background: #f7f7f6;
   color: #2c2c2a;
+  -webkit-font-smoothing: antialiased;
 }
 
 a { text-decoration: none; color: inherit; }
+a:hover { color: inherit; }
 ul { list-style: none; }
+
+/* ============ SHARED ACCENT DIVIDER ============
+   A thin gold hairline appears automatically under
+   section eyebrow labels sitewide — no markup edits
+   needed on individual pages. */
+.vision-label, .products-label, .projects-label, .certificates-label,
+.partners-label, .goals-label, .advantages-label, .qc-label, .dev-label,
+.pw-label, .about-label, .page-hero-label, .hero-label {
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.vision-label::after, .products-label::after, .projects-label::after,
+.certificates-label::after, .partners-label::after, .goals-label::after,
+.advantages-label::after, .qc-label::after, .dev-label::after,
+.pw-label::after, .about-label::after, .page-hero-label::after, .hero-label::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, #c9a24b, rgba(201,162,75,0.15));
+}
+
+[dir="rtl"] .vision-label::after, [dir="rtl"] .products-label::after,
+[dir="rtl"] .projects-label::after, [dir="rtl"] .certificates-label::after,
+[dir="rtl"] .partners-label::after, [dir="rtl"] .goals-label::after,
+[dir="rtl"] .advantages-label::after, [dir="rtl"] .qc-label::after,
+[dir="rtl"] .dev-label::after, [dir="rtl"] .pw-label::after,
+[dir="rtl"] .about-label::after, [dir="rtl"] .page-hero-label::after,
+[dir="rtl"] .hero-label::after {
+  left: auto; right: 0;
+  background: linear-gradient(270deg, #c9a24b, rgba(201,162,75,0.15));
+}
+
+.section-header .about-label::after { left: 50%; transform: translateX(-50%); }
+[dir="rtl"] .section-header .about-label::after { right: 50%; left: auto; transform: translateX(50%); }
 
 /* ============ HERO / HEADER ============ */
 .hero {
@@ -1108,7 +1147,7 @@ ul { list-style: none; }
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.reveal-visible {

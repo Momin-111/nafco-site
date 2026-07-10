@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Our Projects NAFCO Aluminium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .nav { position: fixed; background: #1c2530; border-bottom-color: rgba(255,255,255,0.1); z-index: 100; }
@@ -528,7 +531,7 @@
                 <p class="footer-brand-name">National Aluminium Factory Co.</p>
             </div>
             <div class="footer-map-frame">
-                <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NAFCO location"></iframe>
+                <iframe src="https://maps.google.com/maps?q=National%20Aluminium%20Factory%20Co.%20Street%203228%20Riyadh%2014335&t=m&z=14&output=embed&iwloc=near" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" title="NAFCO location"></iframe>
             </div>
         </div>
         <div class="footer-info-col">
@@ -536,7 +539,7 @@
             <div class="footer-info-block"><a href="https://www.google.com/maps/search/?api=1&query=Street+3228+Riyadh+14335+Saudi+Arabia" target="_blank" rel="noopener" class="footer-map-link">Street 3228, Riyadh 14335, Saudi Arabia</a></div>
             <div class="footer-info-block"><a href="mailto:sales@alunafco.com">sales@alunafco.com</a></div>
             <div class="footer-info-block"><a href="mailto:costing@alunafco.com">costing@alunafco.com</a></div>
-            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105">011 265 0105</a></div>
+            <div class="footer-info-block footer-info-block--last"><a href="tel:+9660112650105" dir="ltr">011 265 0105</a></div>
         </div>
     </div>
     <div class="footer-bottom">National Aluminium Factory Co. NAFCO &copy; 2026. All rights reserved.</div>
