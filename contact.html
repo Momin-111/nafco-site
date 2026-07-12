@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com; frame-src https://maps.google.com https://www.google.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://raw.githubusercontent.com https://formsubmit.co; frame-src https://maps.google.com https://www.google.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto: https://formsubmit.co; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contact Us NAFCO Aluminium</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,7 +106,10 @@
       <div class="form-card-title">Send us a message</div>
       <div class="form-card-sub">Fill in the details below and one of our specialists will be in touch.</div>
 
-      <form id="contact-form" action="mailto:sales@alunafco.com" method="POST" enctype="text/plain">
+      <form id="contact-form" action="https://formsubmit.co/sales@alunafco.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="form-row">
           <div class="form-group">
