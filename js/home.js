@@ -1,48 +1,8 @@
 /* ========================================
    NAFCO Aluminium — home page scripts
-   World map, hero text rotation, partner logo fallback.
+   Hero text rotation, partner logo fallback.
+   (World map is a static local SVG: images/world-map.svg)
    ======================================== */
-
-(function () {
-    var svg = document.getElementById('world-map');
-    if (!svg) return;
-    var W = 1000, H = 460;
-    function project(lon, lat) { return [(lon + 180) / 360 * W, (90 - lat) / 180 * H]; }
-    function ringToD(ring) {
-        return ring.map(function(pt, i) {
-            var p = project(pt[0], pt[1]);
-            return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1);
-        }).join(' ') + 'Z';
-    }
-    function geoToD(geometry) {
-        if (!geometry) return '';
-        var parts = [];
-        if (geometry.type === 'Polygon') {
-            geometry.coordinates.forEach(function(r) { parts.push(ringToD(r)); });
-        } else if (geometry.type === 'MultiPolygon') {
-            geometry.coordinates.forEach(function(p) { p.forEach(function(r) { parts.push(ringToD(r)); }); });
-        }
-        return parts.join(' ');
-    }
-    fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-            data.features.forEach(function(f) {
-                var name = f.properties.ADMIN || f.properties.name || '';
-                var d = geoToD(f.geometry);
-                if (!d) return;
-                var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.setAttribute('d', d);
-                path.setAttribute('fill', name === 'Saudi Arabia' ? '#9b1c2e' : '#d7d9dc');
-                path.setAttribute('stroke', '#f7f7f6');
-                path.setAttribute('stroke-width', '0.4');
-                svg.appendChild(path);
-            });
-        })
-        .catch(function() {
-            svg.innerHTML = '<rect width="1000" height="460" fill="#e8ecf0" rx="6"/>';
-        });
-})();
 
 (function () {
     var texts = document.querySelectorAll('.hero-text');
