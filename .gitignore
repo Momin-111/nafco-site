@@ -1,7 +1,6 @@
 # IDE / local tooling
 .idea/
 .vscode/
-.claude/
 
 # OS files
 .DS_Store

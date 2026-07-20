@@ -205,8 +205,8 @@ ul { list-style: none; }
 }
 
 .logo-circle {
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
