@@ -1097,10 +1097,11 @@ ul { list-style: none; }
   margin-bottom: 22px;
 }
 
-.footer-info-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 5px; }
-.footer-info-block { padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.15); }
-.footer-info-block--last { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.footer-info-block a { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.85); transition: color 0.2s ease; }
+.footer-info-block { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.footer-info-block--last { margin-bottom: 0; }
+.footer-info-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; }
+.footer-info-icon svg { width: 19px; height: 19px; color: #c98890; }
+.footer-info-block a { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.85); transition: color 0.2s ease; }
 .footer-info-block a:hover { color: #ffffff; }
 
 .footer-map-link { display: inline-flex; align-items: flex-start; gap: 6px; text-decoration: none; }
