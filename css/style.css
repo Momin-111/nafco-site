@@ -204,9 +204,34 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-sub {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+[dir="rtl"] .logo-sub {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) { .logo-sub { display: none; } }
+
 .logo-circle {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
