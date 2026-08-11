@@ -343,7 +343,7 @@ ul { list-style: none; }
 /* ============ MOBILE NAV ============ */
 .nav-toggle { display: none; }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .nav { flex-wrap: wrap; }
 
   .nav-toggle {
