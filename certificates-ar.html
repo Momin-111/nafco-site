@@ -57,13 +57,60 @@
         .lightbox-close svg { width: 18px; height: 18px; color: #fff; }
         .lightbox-caption { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.55); font-size: 13px; font-weight: 500; white-space: nowrap; }
 
+        /* ---- اختبارات المشاريع ---- */
+        .testing-page { background: #ffffff; padding: 80px 60px 100px; border-top: 1px solid #ececea; }
+        .testing-page-inner { max-width: 1100px; margin: 0 auto; }
+        .testing-page-header { max-width: 720px; margin-bottom: 2.75rem; }
+        .testing-label { margin-bottom: 14px; }
+        .testing-page-title { font-size: 1.9rem; font-weight: 800; color: #1c2530; line-height: 1.35; margin-bottom: 1rem; }
+        .testing-page-sub { font-size: 0.95rem; color: #666; line-height: 2.05; }
+
+        .testing-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #ececea; border: 1px solid #ececea; border-radius: 14px; overflow: hidden; margin-bottom: 3rem; }
+        .tstat { background: #fff; padding: 1.5rem 1.25rem; text-align: center; }
+        .tstat b { display: block; font-size: 1.55rem; font-weight: 800; color: #9b1c2e; line-height: 1.1; margin-bottom: 6px; }
+        .tstat span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; color: #999; }
+
+        .testing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+        .treport { display: grid; grid-template-columns: 168px 1fr; background: #fff; border: 1px solid #ececea; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(20,24,30,0.04); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
+        .treport:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(20,24,30,0.11); }
+
+        .treport-img { position: relative; background: #f2f2f0; border-inline-end: 1px solid #ececea; cursor: zoom-in; overflow: hidden; }
+        .treport-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+        .treport:hover .treport-img img { transform: scale(1.04); }
+        .treport-zoom { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(15,22,30,0.78); color: #fff; font-size: 10px; font-weight: 600; text-align: center; padding: 6px 4px; opacity: 0; transition: opacity 0.25s ease; }
+        .treport:hover .treport-zoom { opacity: 1; }
+
+        .treport-body { padding: 1.5rem 1.6rem; }
+        .treport-pass { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; color: #1a7a3c; background: rgba(26,122,60,0.09); padding: 3px 12px; border-radius: 20px; margin-bottom: 10px; }
+        .treport-pass::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #1a7a3c; }
+        .treport-title { font-size: 1.02rem; font-weight: 800; color: #1c2530; line-height: 1.5; margin-bottom: 4px; }
+        .treport-type { font-size: 0.78rem; font-weight: 600; color: #9b1c2e; margin-bottom: 1rem; }
+
+        .treport-specs { list-style: none; padding: 0; margin: 0 0 1.1rem; border-top: 1px solid #f0f0ee; }
+        .treport-specs li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f0f0ee; font-size: 0.8rem; color: #555; line-height: 1.75; }
+        .treport-specs li span { font-size: 0.7rem; font-weight: 700; color: #aaa; padding-top: 2px; }
+
+        .treport-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 700; color: #9b1c2e; transition: gap 0.25s ease, color 0.2s ease; }
+        .treport-link svg { width: 14px; height: 14px; }
+        .treport-link:hover { color: #7e1624; gap: 12px; }
+
         @media (max-width: 900px) {
             .page-hero { padding: 120px 30px 50px; }
             .page-hero-title { font-size: 24px; }
             .certs-page { padding: 50px 30px 60px; }
             .certs-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .testing-page { padding: 60px 30px 70px; }
+            .testing-page-title { font-size: 1.5rem; }
+            .testing-grid { grid-template-columns: 1fr; }
+            .testing-stats { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (max-width: 560px) { .certs-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 560px) {
+            .certs-grid { grid-template-columns: 1fr; }
+            .treport { grid-template-columns: 1fr; }
+            .treport-img { height: 190px; border-inline-end: none; border-bottom: 1px solid #ececea; }
+            .treport-specs li { grid-template-columns: 1fr; gap: 2px; }
+        }
     </style>
 </head>
 <body>
@@ -132,6 +179,188 @@
 
     </div>
 </div>
+
+<!-- ============ PROJECT TESTING ============ -->
+<section class="testing-page">
+    <div class="testing-page-inner">
+
+        <div class="testing-page-header">
+            <p class="page-hero-label testing-label">اختبارات المشاريع</p>
+            <h2 class="testing-page-title">مُختبرة باستقلالية. وأداء مُثبت.</h2>
+            <p class="testing-page-sub">
+                كل نظام واجهات تنفّذه نافكو يخضع لاختبارات أداء مستقلة على يد استشاريين
+                معتمدين من طرف ثالث قبل اعتماده في أي مشروع: اختبار تسرّب الهواء، واختبار
+                تغلغل الماء الساكن والديناميكي، واختبار الأحمال الإنشائية، واختبارات الخرطوم
+                والغرفة في الموقع كلها موثّقة ومعتمدة بحضور جهة اختبار مستقلة.
+            </p>
+        </div>
+
+        <div class="testing-stats">
+            <div class="tstat"><b>7</b><span>تقارير اختبار نهائية</span></div>
+            <div class="tstat"><b>100%</b><span>ناجحة</span></div>
+            <div class="tstat"><b>ASTM &amp; AAMA</b><span>معايير عالمية</span></div>
+            <div class="tstat"><b>ISO 17025</b><span>مختبرات معتمدة</span></div>
+        </div>
+
+        <div class="testing-grid">
+
+            <article class="treport">
+                <div class="treport-img" data-lightbox-src="images/testrep-stc-hq-curtain-wall-test.jpg" data-lightbox-caption="تقرير اختبار الواجهة الزجاجية مقر STC الجديد">
+                    <img src="images/testrep-stc-hq-curtain-wall-test.jpg" alt="تقرير اختبار مقر STC" decoding="async">
+                    <span class="treport-zoom">اضغط للتكبير</span>
+                </div>
+                <div class="treport-body">
+                    <span class="treport-pass">ناجح</span>
+                    <h3 class="treport-title">مجمّع المقر الرئيسي الجديد لشركة STC</h3>
+                    <p class="treport-type">اختبار أداء واجهة زجاجية كامل</p>
+                    <ul class="treport-specs">
+                        <li><span>المعايير</span>ASTM E283 / E331 / E330، AAMA 501.1، 501.7</li>
+                        <li><span>النتيجة</span>نجحت جميع الاختبارات لا تسرّب ماء عند 450 باسكال</li>
+                        <li><span>جهة الاختبار</span>Thomas Bell-Wright International Consultants</li>
+                        <li><span>التاريخ</span>أكتوبر 2024</li>
+                    </ul>
+                    <a class="treport-link" href="documents/test-reports/stc-hq-curtain-wall-test.pdf" target="_blank" rel="noopener">
+                        عرض التقرير الكامل
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="treport">
+                <div class="treport-img" data-lightbox-src="images/testrep-riyadh-metro-olaya-curtain-wall-test.jpg" data-lightbox-caption="تقرير اختبار الواجهة الزجاجية محطة العليا مترو الرياض">
+                    <img src="images/testrep-riyadh-metro-olaya-curtain-wall-test.jpg" alt="تقرير اختبار محطة العليا" decoding="async">
+                    <span class="treport-zoom">اضغط للتكبير</span>
+                </div>
+                <div class="treport-body">
+                    <span class="treport-pass">ناجح</span>
+                    <h3 class="treport-title">محطة العليا 2B2 مترو الرياض</h3>
+                    <p class="treport-type">اختبار نموذج الواجهة الزجاجية</p>
+                    <ul class="treport-specs">
+                        <li><span>المعايير</span>ASTM E283، E331، AAMA 501.1 / 501.2 / 501.7</li>
+                        <li><span>النتيجة</span>ناجح لم يُلاحظ أي تسرّب للماء</li>
+                        <li><span>العيّنة</span>واجهة زجاجية 12.88 م &times; 6.33 م</li>
+                        <li><span>التاريخ</span>أبريل 2023</li>
+                    </ul>
+                    <a class="treport-link" href="documents/test-reports/riyadh-metro-olaya-curtain-wall-test.pdf" target="_blank" rel="noopener">
+                        عرض التقرير الكامل
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="treport">
+                <div class="treport-img" data-lightbox-src="images/testrep-dlr2255-test-report.jpg" data-lightbox-caption="تقرير اختبار الأداء المخبري فندق فور سيزونز جدة">
+                    <img src="images/testrep-dlr2255-test-report.jpg" alt="تقرير اختبار فور سيزونز جدة" decoding="async">
+                    <span class="treport-zoom">اضغط للتكبير</span>
+                </div>
+                <div class="treport-body">
+                    <span class="treport-pass">ناجح</span>
+                    <h3 class="treport-title">فندق فور سيزونز متعدد الاستخدامات، جدة</h3>
+                    <p class="treport-type">اختبار أداء مخبري</p>
+                    <ul class="treport-specs">
+                        <li><span>العيّنة</span>نظام باب منزلق (CW51A)</li>
+                        <li><span>المختبر</span>Element معتمد من UKAS</li>
+                        <li><span>رقم التقرير</span>DLR2255، مراجعة 0</li>
+                        <li><span>التاريخ</span>يناير 2023</li>
+                    </ul>
+                    <a class="treport-link" href="documents/test-reports/dlr2255-test-report.pdf" target="_blank" rel="noopener">
+                        عرض التقرير الكامل
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="treport">
+                <div class="treport-img" data-lightbox-src="images/testrep-al-rajhi-chamber-test.jpg" data-lightbox-caption="تقرير اختبار الغرفة في الموقع مركز الراجحي الطبي">
+                    <img src="images/testrep-al-rajhi-chamber-test.jpg" alt="تقرير اختبار الغرفة مركز الراجحي الطبي" decoding="async">
+                    <span class="treport-zoom">اضغط للتكبير</span>
+                </div>
+                <div class="treport-body">
+                    <span class="treport-pass">ناجح</span>
+                    <h3 class="treport-title">مركز الراجحي الطبي، الرياض</h3>
+                    <p class="treport-type">اختبار الغرفة في الموقع</p>
+                    <ul class="treport-specs">
+                        <li><span>المعايير</span>ASTM E783:02 (2018) و ASTM E1105-15 (2023)</li>
+                        <li><span>النتيجة</span>لا تسرّب للماء عند 300 باسكال</li>
+                        <li><span>العيّنة</span>تجميعة زجاجية ثابتة 4.5 م &times; 4.6 م</li>
+                        <li><span>التاريخ</span>يونيو 2026</li>
+                    </ul>
+                    <a class="treport-link" href="documents/test-reports/al-rajhi-chamber-test.pdf" target="_blank" rel="noopener">
+                        عرض التقرير الكامل
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="treport">
+                <div class="treport-img" data-lightbox-src="images/testrep-al-rajhi-hose-test.jpg" data-lightbox-caption="تقرير اختبار الخرطوم في الموقع مركز الراجحي الطبي">
+                    <img src="images/testrep-al-rajhi-hose-test.jpg" alt="تقرير اختبار الخرطوم مركز الراجحي الطبي" decoding="async">
+                    <span class="treport-zoom">اضغط للتكبير</span>
+                </div>
+                <div class="treport-body">
+                    <span class="treport-pass">ناجح</span>
+                    <h3 class="treport-title">مركز الراجحي الطبي، الرياض</h3>
+                    <p class="treport-type">اختبار الخرطوم في الموقع</p>
+                    <ul class="treport-specs">
+                        <li><span>المعيار</span>AAMA 501.2-15</li>
+                        <li><span>النتيجة</span>ناجح لا تسرّب للماء</li>
+                        <li><span>الاستشاري</span>دار الهندسة</li>
+                        <li><span>التاريخ</span>يوليو 2026</li>
+                    </ul>
+                    <a class="treport-link" href="documents/test-reports/al-rajhi-hose-test.pdf" target="_blank" rel="noopener">
+                        عرض التقرير الكامل
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="treport">
+                <div class="treport-img" data-lightbox-src="images/testrep-olaya-metro-hose-test.jpg" data-lightbox-caption="تقرير اختبار الخرطوم في الموقع محطة العليا مترو الرياض">
+                    <img src="images/testrep-olaya-metro-hose-test.jpg" alt="تقرير اختبار الخرطوم محطة العليا" decoding="async">
+                    <span class="treport-zoom">اضغط للتكبير</span>
+                </div>
+                <div class="treport-body">
+                    <span class="treport-pass">ناجح</span>
+                    <h3 class="treport-title">محطة العليا، مترو الرياض</h3>
+                    <p class="treport-type">اختبار الخرطوم في الموقع</p>
+                    <ul class="treport-specs">
+                        <li><span>المعيار</span>AAMA 501.2-15</li>
+                        <li><span>النتيجة</span>ناجح لا تسرّب للماء</li>
+                        <li><span>الاستشاري</span>استشاريو مترو الرياض (RMTC)</li>
+                        <li><span>التاريخ</span>أغسطس 2023</li>
+                    </ul>
+                    <a class="treport-link" href="documents/test-reports/olaya-metro-hose-test.pdf" target="_blank" rel="noopener">
+                        عرض التقرير الكامل
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="treport">
+                <div class="treport-img" data-lightbox-src="images/testrep-metro-1y1-hose-test.jpg" data-lightbox-caption="تقرير اختبار الخرطوم في الموقع محطة 1Y1 مترو الرياض">
+                    <img src="images/testrep-metro-1y1-hose-test.jpg" alt="تقرير اختبار الخرطوم محطة 1Y1" decoding="async">
+                    <span class="treport-zoom">اضغط للتكبير</span>
+                </div>
+                <div class="treport-body">
+                    <span class="treport-pass">ناجح</span>
+                    <h3 class="treport-title">محطة 1Y1، مترو الرياض</h3>
+                    <p class="treport-type">اختبار الخرطوم في الموقع</p>
+                    <ul class="treport-specs">
+                        <li><span>المعيار</span>AAMA 501.2-15</li>
+                        <li><span>النتيجة</span>نجحت جميع مواقع الاختبار لا تسرّب للماء</li>
+                        <li><span>الاستشاري</span>استشاريو مترو الرياض (RMTC)</li>
+                        <li><span>التاريخ</span>أكتوبر 2023</li>
+                    </ul>
+                    <a class="treport-link" href="documents/test-reports/metro-1y1-hose-test.pdf" target="_blank" rel="noopener">
+                        عرض التقرير الكامل
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
 
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close">
