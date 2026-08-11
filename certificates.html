@@ -72,12 +72,12 @@
 
         .testing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 
-        .treport { display: grid; grid-template-columns: 168px 1fr; background: #fff; border: 1px solid #ececea; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(20,24,30,0.04); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
+        .treport { display: flex; flex-direction: column; background: #fff; border: 1px solid #ececea; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(20,24,30,0.04); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
         .treport:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(20,24,30,0.11); }
 
-        .treport-img { position: relative; background: #f2f2f0; border-inline-end: 1px solid #ececea; cursor: zoom-in; overflow: hidden; }
-        .treport-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
-        .treport:hover .treport-img img { transform: scale(1.04); }
+        .treport-img { position: relative; background: #fff; border-bottom: 1px solid #ececea; cursor: zoom-in; overflow: hidden; height: 200px; padding: 12px; }
+        .treport-img img { width: 100%; height: 100%; object-fit: contain; display: block; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+        .treport:hover .treport-img img { transform: scale(1.02); }
         .treport-zoom { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(15,22,30,0.78); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; padding: 6px 4px; opacity: 0; transition: opacity 0.25s ease; }
         .treport:hover .treport-zoom { opacity: 1; }
 
@@ -104,9 +104,9 @@
         }
         @media (max-width: 560px) {
             .certs-grid { grid-template-columns: 1fr; }
-            .treport { grid-template-columns: 1fr; }
-            .treport-img { height: 190px; border-inline-end: none; border-bottom: 1px solid #ececea; }
-            .treport-img img { object-position: top center; }
+            .treport-img { height: 170px; }
+            
+            
             .treport-specs li { grid-template-columns: 1fr; gap: 2px; }
         }
     </style>
@@ -205,8 +205,8 @@
         <div class="testing-grid">
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-dynamic-water.jpg" data-lightbox-caption="Dynamic water penetration test rig during the performance test">
-                    <img src="images/test-photo-dynamic-water.jpg" alt="Dynamic water penetration test rig facing the curtain wall specimen" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-curtainwall-performance.jpg" data-lightbox-caption="Test summary from the final curtain wall test report">
+                    <img src="images/report-curtainwall-performance.jpg" alt="Test summary table from the final test report" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
@@ -223,8 +223,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-mockup-spray.jpg" data-lightbox-caption="Water spray on the full-scale mock-up during testing">
-                    <img src="images/test-photo-mockup-spray.jpg" alt="Water sprayed over the full-scale curtain wall mock-up" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-mockup-watertests.jpg" data-lightbox-caption="Water penetration and structural test results from the final report">
+                    <img src="images/report-mockup-watertests.jpg" alt="Water penetration and structural test results, all recorded as passed" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
@@ -241,8 +241,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-lab-sample.jpg" data-lightbox-caption="The sliding door sample installed in the laboratory test rig">
-                    <img src="images/test-photo-lab-sample.jpg" alt="Sliding door test sample mounted in the laboratory rig" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-lab-results.jpg" data-lightbox-caption="Laboratory test results from the final report">
+                    <img src="images/report-lab-results.jpg" alt="Laboratory test results table, all main tests passed" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
@@ -259,8 +259,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-chamber-water.jpg" data-lightbox-caption="Water observed on the glass from inside during the chamber test">
-                    <img src="images/test-photo-chamber-water.jpg" alt="Water running down the glazing during the site chamber test" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-chamber-results.jpg" data-lightbox-caption="Static water penetration result from the final chamber test report">
+                    <img src="images/report-chamber-results.jpg" alt="Chamber test result recorded as pass at 300 Pa" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
@@ -277,8 +277,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-hose-facade.jpg" data-lightbox-caption="Hose test in progress on the installed facade">
-                    <img src="images/test-photo-hose-facade.jpg" alt="Technician running the hose test on the installed facade" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-hose-results-a.jpg" data-lightbox-caption="Hose test results by location from the final report">
+                    <img src="images/report-hose-results-a.jpg" alt="Hose test results table showing pass with no water leakage" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
@@ -295,8 +295,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-hose-gauge.jpg" data-lightbox-caption="Calibrated nozzle and pressure gauge used for the hose test">
-                    <img src="images/test-photo-hose-gauge.jpg" alt="Calibrated nozzle and pressure gauge used during the hose test" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-hose-results-b.jpg" data-lightbox-caption="Hose test result from the final report">
+                    <img src="images/report-hose-results-b.jpg" alt="Hose test result recorded as pass, no water leakage" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
@@ -313,8 +313,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-hose-joint.jpg" data-lightbox-caption="Hose test on a vertical facade joint">
-                    <img src="images/test-photo-hose-joint.jpg" alt="Hose test applied to a vertical facade joint" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-hose-results-c.jpg" data-lightbox-caption="Hose test results across tested joints from the final report">
+                    <img src="images/report-hose-results-c.jpg" alt="Hose test results for each tested joint, all passed" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">

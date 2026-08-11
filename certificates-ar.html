@@ -72,12 +72,12 @@
 
         .testing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 
-        .treport { display: grid; grid-template-columns: 168px 1fr; background: #fff; border: 1px solid #ececea; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(20,24,30,0.04); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
+        .treport { display: flex; flex-direction: column; background: #fff; border: 1px solid #ececea; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 10px rgba(20,24,30,0.04); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
         .treport:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(20,24,30,0.11); }
 
-        .treport-img { position: relative; background: #f2f2f0; border-inline-end: 1px solid #ececea; cursor: zoom-in; overflow: hidden; }
-        .treport-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
-        .treport:hover .treport-img img { transform: scale(1.04); }
+        .treport-img { position: relative; background: #fff; border-bottom: 1px solid #ececea; cursor: zoom-in; overflow: hidden; height: 200px; padding: 12px; }
+        .treport-img img { width: 100%; height: 100%; object-fit: contain; display: block; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+        .treport:hover .treport-img img { transform: scale(1.02); }
         .treport-zoom { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(15,22,30,0.78); color: #fff; font-size: 10px; font-weight: 600; text-align: center; padding: 6px 4px; opacity: 0; transition: opacity 0.25s ease; }
         .treport:hover .treport-zoom { opacity: 1; }
 
@@ -104,8 +104,8 @@
         }
         @media (max-width: 560px) {
             .certs-grid { grid-template-columns: 1fr; }
-            .treport { grid-template-columns: 1fr; }
-            .treport-img { height: 190px; border-inline-end: none; border-bottom: 1px solid #ececea; }
+            .treport-img { height: 170px; }
+            
             .treport-specs li { grid-template-columns: 1fr; gap: 2px; }
         }
     </style>
@@ -202,8 +202,8 @@
         <div class="testing-grid">
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-dynamic-water.jpg" data-lightbox-caption="جهاز اختبار تغلغل الماء الديناميكي أثناء اختبار الأداء">
-                    <img src="images/test-photo-dynamic-water.jpg" alt="جهاز اختبار الماء الديناميكي أمام عيّنة الواجهة الزجاجية" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-curtainwall-performance.jpg" data-lightbox-caption="ملخّص الاختبارات من تقرير اختبار الواجهة النهائي">
+                    <img src="images/report-curtainwall-performance.jpg" alt="جدول ملخّص الاختبارات من التقرير النهائي" decoding="async">
                     <span class="treport-zoom">اضغط للتكبير</span>
                 </div>
                 <div class="treport-body">
@@ -220,8 +220,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-mockup-spray.jpg" data-lightbox-caption="رشّ الماء على النموذج بالحجم الكامل أثناء الاختبار">
-                    <img src="images/test-photo-mockup-spray.jpg" alt="رشّ الماء على نموذج الواجهة الزجاجية بالحجم الكامل" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-mockup-watertests.jpg" data-lightbox-caption="نتائج اختبارات تغلغل الماء والأداء الإنشائي من التقرير النهائي">
+                    <img src="images/report-mockup-watertests.jpg" alt="نتائج اختبارات تغلغل الماء والأداء الإنشائي، جميعها ناجحة" decoding="async">
                     <span class="treport-zoom">اضغط للتكبير</span>
                 </div>
                 <div class="treport-body">
@@ -238,8 +238,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-lab-sample.jpg" data-lightbox-caption="عيّنة الباب المنزلق مركّبة في جهاز الاختبار المخبري">
-                    <img src="images/test-photo-lab-sample.jpg" alt="عيّنة الباب المنزلق داخل جهاز الاختبار المخبري" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-lab-results.jpg" data-lightbox-caption="نتائج الاختبارات المخبرية من التقرير النهائي">
+                    <img src="images/report-lab-results.jpg" alt="جدول نتائج الاختبارات المخبرية، جميع الاختبارات الرئيسية ناجحة" decoding="async">
                     <span class="treport-zoom">اضغط للتكبير</span>
                 </div>
                 <div class="treport-body">
@@ -256,8 +256,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-chamber-water.jpg" data-lightbox-caption="مراقبة الماء على الزجاج من الداخل أثناء اختبار الغرفة">
-                    <img src="images/test-photo-chamber-water.jpg" alt="انسياب الماء على الزجاج أثناء اختبار الغرفة في الموقع" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-chamber-results.jpg" data-lightbox-caption="نتيجة اختبار تغلغل الماء الساكن من تقرير اختبار الغرفة النهائي">
+                    <img src="images/report-chamber-results.jpg" alt="نتيجة اختبار الغرفة مسجّلة ناجحة عند 300 باسكال" decoding="async">
                     <span class="treport-zoom">اضغط للتكبير</span>
                 </div>
                 <div class="treport-body">
@@ -274,8 +274,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-hose-facade.jpg" data-lightbox-caption="اختبار الخرطوم أثناء التنفيذ على الواجهة المركّبة">
-                    <img src="images/test-photo-hose-facade.jpg" alt="فني ينفّذ اختبار الخرطوم على الواجهة المركّبة" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-hose-results-a.jpg" data-lightbox-caption="نتائج اختبار الخرطوم حسب الموقع من التقرير النهائي">
+                    <img src="images/report-hose-results-a.jpg" alt="جدول نتائج اختبار الخرطوم يبيّن النجاح دون تسرّب ماء" decoding="async">
                     <span class="treport-zoom">اضغط للتكبير</span>
                 </div>
                 <div class="treport-body">
@@ -292,8 +292,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-hose-gauge.jpg" data-lightbox-caption="الفوهة المعايرة ومقياس الضغط المستخدمان في اختبار الخرطوم">
-                    <img src="images/test-photo-hose-gauge.jpg" alt="الفوهة المعايرة ومقياس الضغط أثناء اختبار الخرطوم" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-hose-results-b.jpg" data-lightbox-caption="نتيجة اختبار الخرطوم من التقرير النهائي">
+                    <img src="images/report-hose-results-b.jpg" alt="نتيجة اختبار الخرطوم مسجّلة ناجحة دون تسرّب ماء" decoding="async">
                     <span class="treport-zoom">اضغط للتكبير</span>
                 </div>
                 <div class="treport-body">
@@ -310,8 +310,8 @@
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/test-photo-hose-joint.jpg" data-lightbox-caption="اختبار الخرطوم على وصلة رأسية في الواجهة">
-                    <img src="images/test-photo-hose-joint.jpg" alt="تطبيق اختبار الخرطوم على وصلة رأسية في الواجهة" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/report-hose-results-c.jpg" data-lightbox-caption="نتائج اختبار الخرطوم لكل الوصلات المختبرة من التقرير النهائي">
+                    <img src="images/report-hose-results-c.jpg" alt="نتائج اختبار الخرطوم لكل وصلة مختبرة، جميعها ناجحة" decoding="async">
                     <span class="treport-zoom">اضغط للتكبير</span>
                 </div>
                 <div class="treport-body">
