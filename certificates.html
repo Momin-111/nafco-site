@@ -91,9 +91,8 @@
         .treport-specs li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f0f0ee; font-size: 0.8rem; color: #555; line-height: 1.6; }
         .treport-specs li span { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #aaa; padding-top: 2px; }
 
-        .treport-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 700; color: #9b1c2e; transition: gap 0.25s ease, color 0.2s ease; }
-        .treport-link svg { width: 14px; height: 14px; }
-        .treport-link:hover { color: #7e1624; gap: 12px; }
+        .treport-note { display: inline-flex; align-items: center; gap: 7px; font-size: 0.75rem; font-weight: 600; color: #999; }
+        .treport-note::before { content: ''; width: 13px; height: 13px; border-radius: 3px; border: 1.5px solid #d4d4d0; flex-shrink: 0; }
 
         @media (max-width: 900px) {
             .page-hero { padding: 120px 30px 50px; }
@@ -208,35 +207,32 @@
         <div class="testing-grid">
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/testrep-stc-hq-curtain-wall-test.jpg" data-lightbox-caption="STC New Headquarters Complex Curtain Wall Test Report">
-                    <img src="images/testrep-stc-hq-curtain-wall-test.jpg" alt="STC Headquarters curtain wall test report" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/testing-tower-glazed.jpg" data-lightbox-caption="Curtain wall performance testing on the mock-up tower">
+                    <img src="images/testing-tower-glazed.jpg" alt="Glazed curtain wall mock-up tower under test" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
                     <span class="treport-pass">Passed</span>
-                    <h3 class="treport-title">STC New Headquarters Complex</h3>
+                    <h3 class="treport-title">Corporate Headquarters Complex</h3>
                     <p class="treport-type">Full Curtain Wall Performance Test</p>
                     <ul class="treport-specs">
                         <li><span>Standards</span>ASTM E283 / E331 / E330, AAMA 501.1, 501.7</li>
                         <li><span>Result</span>All tests passed — no water leakage at 450 Pa</li>
-                        <li><span>Tested by</span>Thomas Bell-Wright International Consultants</li>
+                        <li><span>Witnessed by</span>Independent ISO 17025 accredited consultant</li>
                         <li><span>Date</span>October 2024</li>
                     </ul>
-                    <a class="treport-link" href="documents/test-reports/stc-hq-curtain-wall-test.pdf" target="_blank" rel="noopener">
-                        View full report
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
-                    </a>
+                    <p class="treport-note">Full report available on request</p>
                 </div>
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/testrep-riyadh-metro-olaya-curtain-wall-test.jpg" data-lightbox-caption="Riyadh Metro Olaya Station Curtain Wall Test Report">
-                    <img src="images/testrep-riyadh-metro-olaya-curtain-wall-test.jpg" alt="Riyadh Metro Olaya curtain wall test report" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/testing-tower-day.jpg" data-lightbox-caption="Full-scale curtain wall mock-up test tower">
+                    <img src="images/testing-tower-day.jpg" alt="Full-scale curtain wall mock-up test tower" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
                     <span class="treport-pass">Passed</span>
-                    <h3 class="treport-title">Riyadh Metro Olaya Station 2B2</h3>
+                    <h3 class="treport-title">Metro Station Project, Riyadh</h3>
                     <p class="treport-type">Curtain Wall Mock-Up Test</p>
                     <ul class="treport-specs">
                         <li><span>Standards</span>ASTM E283, E331, AAMA 501.1 / 501.2 / 501.7</li>
@@ -244,43 +240,37 @@
                         <li><span>Specimen</span>12.88 m &times; 6.33 m stick curtain wall</li>
                         <li><span>Date</span>April 2023</li>
                     </ul>
-                    <a class="treport-link" href="documents/test-reports/riyadh-metro-olaya-curtain-wall-test.pdf" target="_blank" rel="noopener">
-                        View full report
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
-                    </a>
+                    <p class="treport-note">Full report available on request</p>
                 </div>
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/testrep-dlr2255-test-report.jpg" data-lightbox-caption="Four Seasons Jeddah Laboratory Performance Test Report">
-                    <img src="images/testrep-dlr2255-test-report.jpg" alt="Four Seasons Jeddah laboratory test report" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/project-four-seasons.jpg" data-lightbox-caption="Five-star hospitality project, Jeddah">
+                    <img src="images/project-four-seasons.jpg" alt="Five-star hospitality tower, Jeddah" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
                     <span class="treport-pass">Passed</span>
-                    <h3 class="treport-title">Four Seasons Mixed-Use Hotel, Jeddah</h3>
+                    <h3 class="treport-title">Hospitality Tower, Jeddah</h3>
                     <p class="treport-type">Laboratory Performance Test</p>
                     <ul class="treport-specs">
-                        <li><span>Sample</span>Sliding door system (CW51A)</li>
-                        <li><span>Laboratory</span>Element — UKAS accredited testing</li>
-                        <li><span>Report</span>DLR2255, Revision 0</li>
+                        <li><span>Sample</span>Sliding door system</li>
+                        <li><span>Result</span>Passed laboratory performance criteria</li>
+                        <li><span>Laboratory</span>UKAS accredited testing laboratory</li>
                         <li><span>Date</span>January 2023</li>
                     </ul>
-                    <a class="treport-link" href="documents/test-reports/dlr2255-test-report.pdf" target="_blank" rel="noopener">
-                        View full report
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
-                    </a>
+                    <p class="treport-note">Full report available on request</p>
                 </div>
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/testrep-al-rajhi-chamber-test.jpg" data-lightbox-caption="Al Rajhi Medical Center Site Chamber Test Report">
-                    <img src="images/testrep-al-rajhi-chamber-test.jpg" alt="Al Rajhi Medical Center chamber test report" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/testing-air-leakage.jpg" data-lightbox-caption="Air leakage testing in progress">
+                    <img src="images/testing-air-leakage.jpg" alt="Air leakage test setup on facade mock-up" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
                     <span class="treport-pass">Passed</span>
-                    <h3 class="treport-title">Al Rajhi Medical Center, Riyadh</h3>
+                    <h3 class="treport-title">Medical Center Project, Riyadh</h3>
                     <p class="treport-type">Site Chamber Test</p>
                     <ul class="treport-specs">
                         <li><span>Standards</span>ASTM E783:02 (2018) &amp; ASTM E1105-15 (2023)</li>
@@ -288,76 +278,64 @@
                         <li><span>Specimen</span>4.5 m &times; 4.6 m fixed glazed assembly</li>
                         <li><span>Date</span>June 2026</li>
                     </ul>
-                    <a class="treport-link" href="documents/test-reports/al-rajhi-chamber-test.pdf" target="_blank" rel="noopener">
-                        View full report
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
-                    </a>
+                    <p class="treport-note">Full report available on request</p>
                 </div>
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/testrep-al-rajhi-hose-test.jpg" data-lightbox-caption="Al Rajhi Medical Center Site Hose Test Report">
-                    <img src="images/testrep-al-rajhi-hose-test.jpg" alt="Al Rajhi Medical Center hose test report" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/testing-water-test.jpg" data-lightbox-caption="Static water penetration test at 720 Pa">
+                    <img src="images/testing-water-test.jpg" alt="Water penetration test on glazed facade" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
                     <span class="treport-pass">Passed</span>
-                    <h3 class="treport-title">Al Rajhi Medical Center, Riyadh</h3>
+                    <h3 class="treport-title">Medical Center Project, Riyadh</h3>
                     <p class="treport-type">Site Hose Test</p>
                     <ul class="treport-specs">
                         <li><span>Standard</span>AAMA 501.2-15</li>
                         <li><span>Result</span>Passed — no water leakage</li>
-                        <li><span>Consultant</span>Dar Al Handasah</li>
+                        <li><span>Scope</span>Installed facade joints, on site</li>
                         <li><span>Date</span>July 2026</li>
                     </ul>
-                    <a class="treport-link" href="documents/test-reports/al-rajhi-hose-test.pdf" target="_blank" rel="noopener">
-                        View full report
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
-                    </a>
+                    <p class="treport-note">Full report available on request</p>
                 </div>
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/testrep-olaya-metro-hose-test.jpg" data-lightbox-caption="Olaya Metro Station Site Hose Test Report">
-                    <img src="images/testrep-olaya-metro-hose-test.jpg" alt="Olaya Metro Station hose test report" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/testing-glazing-install.jpg" data-lightbox-caption="Glazed unit installation on the test tower">
+                    <img src="images/testing-glazing-install.jpg" alt="Glazed unit being installed for testing" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
                     <span class="treport-pass">Passed</span>
-                    <h3 class="treport-title">Olaya Station, Riyadh Metro</h3>
+                    <h3 class="treport-title">Metro Station Project, Riyadh</h3>
                     <p class="treport-type">Site Hose Test</p>
                     <ul class="treport-specs">
                         <li><span>Standard</span>AAMA 501.2-15</li>
                         <li><span>Result</span>Passed — no water leakage</li>
-                        <li><span>Consultant</span>Riyadh Metro Transit Consultants</li>
+                        <li><span>Scope</span>Horizontal and vertical joints, on site</li>
                         <li><span>Date</span>August 2023</li>
                     </ul>
-                    <a class="treport-link" href="documents/test-reports/olaya-metro-hose-test.pdf" target="_blank" rel="noopener">
-                        View full report
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
-                    </a>
+                    <p class="treport-note">Full report available on request</p>
                 </div>
             </article>
 
             <article class="treport">
-                <div class="treport-img" data-lightbox-src="images/testrep-metro-1y1-hose-test.jpg" data-lightbox-caption="1Y1 Metro Station Site Hose Test Report">
-                    <img src="images/testrep-metro-1y1-hose-test.jpg" alt="1Y1 Metro Station hose test report" decoding="async">
+                <div class="treport-img" data-lightbox-src="images/testing-tower-night.jpg" data-lightbox-caption="Facade testing continuing after dark">
+                    <img src="images/testing-tower-night.jpg" alt="Facade test tower illuminated at night" decoding="async">
                     <span class="treport-zoom">Click to zoom</span>
                 </div>
                 <div class="treport-body">
                     <span class="treport-pass">Passed</span>
-                    <h3 class="treport-title">1Y1 Station, Riyadh Metro</h3>
+                    <h3 class="treport-title">Metro Station Project, Riyadh</h3>
                     <p class="treport-type">Site Hose Test</p>
                     <ul class="treport-specs">
                         <li><span>Standard</span>AAMA 501.2-15</li>
                         <li><span>Result</span>All test locations passed — no water leakage</li>
-                        <li><span>Consultant</span>Riyadh Metro Transit Consultants</li>
+                        <li><span>Scope</span>Multiple elevations and expansion joints</li>
                         <li><span>Date</span>October 2023</li>
                     </ul>
-                    <a class="treport-link" href="documents/test-reports/metro-1y1-hose-test.pdf" target="_blank" rel="noopener">
-                        View full report
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1v9M4.5 6.5L8 10l3.5-3.5"/><path d="M2 12v2h12v-2"/></svg>
-                    </a>
+                    <p class="treport-note">Full report available on request</p>
                 </div>
             </article>
 
