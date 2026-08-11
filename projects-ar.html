@@ -304,7 +304,11 @@
             <h2 class="sec-title">موثوقون في أعقد مشاريع السعودية</h2>
         </div>
         <div class="projects-grid">
-            <a href="#" class="project-tile">
+            <a href="#" class="project-tile" data-project
+               data-img="images/project-majdoul.jpg" data-title="برج المجدول" data-city="الرياض"
+               data-cat="برج شاهق" data-sector="برج تجاري شاهق"
+               data-scope="واجهة زجاجية موحّدة وأنظمة واجهات إنشائية"
+               data-desc="من أبرز الأبراج الشاهقة في الرياض، يرتفع برج المجدول بتصميمه المنحوت الملتوي المميّز فوق أفق العاصمة. هندست نافكو ونفّذت الواجهة الزجاجية الموحّدة (Unitised) وأنظمة الواجهات الإنشائية للبرج — مصنّعة بدقة عالية لتلبية الهندسة المعقّدة ومعايير الأداء لبرج بارز.">
                 <span class="project-tile-bg" style="background-image:url('images/project-majdoul.jpg')"></span>
                 <span class="project-tile-info">
 <span class="project-tile-city">الرياض</span>
@@ -312,7 +316,11 @@
 <span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
 </span>
             </a>
-            <a href="#" class="project-tile">
+            <a href="#" class="project-tile" data-project
+               data-img="images/project-habib-hospital.jpg" data-title="مستشفى الدكتور سليمان الحبيب" data-city="جدة"
+               data-cat="رعاية صحية" data-sector="رعاية صحية"
+               data-scope="واجهات وزجاج وتكسية"
+               data-desc="منشأة طبية رائدة لأحد أبرز المجموعات الصحية الخاصة في المنطقة. سلّمت نافكو حزمة الواجهات والزجاج والتكسية الألمنيومية كاملة — بدمج الزجاج الحراري عالي الأداء مع معايير المتانة والتشطيب المطلوبة لبيئة مستشفى كبير.">
                 <span class="project-tile-bg" style="background-image:url('images/project-habib-hospital.jpg')"></span>
                 <span class="project-tile-info">
 <span class="project-tile-city">جدة</span>
@@ -320,7 +328,11 @@
 <span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
 </span>
             </a>
-            <a href="#" class="project-tile">
+            <a href="#" class="project-tile" data-project
+               data-img="images/project-sabb-hq.jpg" data-title="المركز الرئيسي لبنك ساب" data-city="الرياض"
+               data-cat="تجاري" data-sector="مؤسسي / مالي"
+               data-scope="واجهة زجاجية وأنظمة ألمنيوم"
+               data-desc="المقر الرئيسي للبنك السعودي البريطاني في الرياض. وردّت نافكو ونفّذت الأنظمة الألمنيومية المعمارية والواجهة الزجاجية للمبنى — بهندسة تقدّم غلافاً راقياً عالي الأداء يليق بمؤسسة مالية رائدة.">
                 <span class="project-tile-bg" style="background-image:url('images/project-sabb-hq.jpg')"></span>
                 <span class="project-tile-info">
 <span class="project-tile-city">الرياض</span>
@@ -328,7 +340,11 @@
 <span class="project-tile-arrow">عرض المشروع <span class="arrow">&#8592;</span></span>
 </span>
             </a>
-            <a href="#" class="project-tile">
+            <a href="#" class="project-tile" data-project
+               data-img="images/project-four-seasons.jpg" data-title="فندق فور سيزونز" data-city="جدة"
+               data-cat="ضيافة" data-sector="ضيافة"
+               data-scope="واجهات ونوافذ وأنظمة معمارية"
+               data-desc="معلم فاخر بخمس نجوم على واجهة جدة البحرية. هندست نافكو واجهة الفندق الألمنيومية والنوافذ والأنظمة المعمارية — بما يلبّي أعلى معايير التشطيب والعزل الصوتي ومقاومة العوامل الجوية للضيافة الفاخرة.">
                 <span class="project-tile-bg" style="background-image:url('images/project-four-seasons.jpg')"></span>
                 <span class="project-tile-info">
 <span class="project-tile-city">جدة</span>
@@ -339,6 +355,23 @@
         </div>
     </div>
 </section>
+
+<!-- ============ PROJECT MODAL ============ -->
+<div class="project-modal" id="project-modal" aria-hidden="true" data-labels="الموقع|القطاع|النطاق">
+    <div class="pm-overlay" data-pm-close></div>
+    <div class="pm-dialog" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+        <button class="pm-close" type="button" data-pm-close aria-label="إغلاق">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="pm-image"><img id="pm-img" src="" alt=""></div>
+        <div class="pm-body">
+            <div class="pm-meta"><span class="pm-city" id="pm-city"></span><span class="pm-cat" id="pm-cat"></span></div>
+            <h3 class="pm-title" id="pm-title"></h3>
+            <p class="pm-desc" id="pm-desc"></p>
+            <div class="pm-specs" id="pm-specs"></div>
+        </div>
+    </div>
+</div>
 
 <section class="proj-cta">
     <p class="proj-cta-label">ابدأ مشروعك</p>
@@ -368,6 +401,7 @@
     <div class="footer-credit">تم تطويره بواسطة Momin Abutayeh</div>
 </footer>
 
+<script src="js/project-modal.js"></script>
 <script src="js/animations.js"></script>
 </body>
 </html>
