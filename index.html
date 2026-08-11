@@ -199,7 +199,11 @@
         </p>
     </div>
     <div class="projects-grid">
-        <a href="projects.html" class="project-tile">
+        <a href="projects.html" class="project-tile" data-project
+           data-img="images/project-majdoul.jpg" data-title="Al Majdoul Tower" data-city="Riyadh"
+           data-cat="High-Rise Tower" data-sector="Commercial High-Rise"
+           data-scope="Unitised curtain wall &amp; structural facade"
+           data-desc="Rising with its distinctive sculpted, twisting silhouette over Riyadh, Al Majdoul is one of the capital's most recognisable high-rise towers. NAFCO engineered and installed the tower's unitised aluminium curtain wall and structural facade — precision-fabricated to meet the demanding geometry and performance standards of a landmark high-rise.">
             <span class="project-tile-bg" style="background-image:url('images/project-majdoul.jpg')"></span>
             <span class="project-tile-info">
                 <span class="project-tile-city">Riyadh</span>
@@ -207,7 +211,11 @@
                 <span class="project-tile-arrow">View Project <span class="arrow">&#8594;</span></span>
             </span>
         </a>
-        <a href="projects.html" class="project-tile">
+        <a href="projects.html" class="project-tile" data-project
+           data-img="images/project-habib-hospital.jpg" data-title="Dr. Sulaiman Al Habib Hospital" data-city="Jeddah"
+           data-cat="Healthcare" data-sector="Healthcare"
+           data-scope="Facade, glazing &amp; cladding"
+           data-desc="A flagship medical facility for one of the region's leading private healthcare groups. NAFCO delivered the complete aluminium facade, glazing and cladding package — pairing high-performance thermal glazing with the durability and finish standards demanded by a major hospital environment.">
             <span class="project-tile-bg" style="background-image:url('images/project-habib-hospital.jpg')"></span>
             <span class="project-tile-info">
                 <span class="project-tile-city">Jeddah</span>
@@ -215,7 +223,11 @@
                 <span class="project-tile-arrow">View Project <span class="arrow">&#8594;</span></span>
             </span>
         </a>
-        <a href="projects.html" class="project-tile">
+        <a href="projects.html" class="project-tile" data-project
+           data-img="images/project-sabb-hq.jpg" data-title="SABB Headquarters" data-city="Riyadh"
+           data-cat="Commercial" data-sector="Corporate / Financial"
+           data-scope="Curtain wall &amp; aluminium systems"
+           data-desc="The corporate headquarters of the Saudi British Bank in Riyadh. NAFCO supplied and installed the building's architectural aluminium systems and curtain wall — engineered to deliver a refined, high-performance envelope befitting a leading financial institution.">
             <span class="project-tile-bg" style="background-image:url('images/project-sabb-hq.jpg')"></span>
             <span class="project-tile-info">
                 <span class="project-tile-city">Riyadh</span>
@@ -223,7 +235,11 @@
                 <span class="project-tile-arrow">View Project <span class="arrow">&#8594;</span></span>
             </span>
         </a>
-        <a href="projects.html" class="project-tile">
+        <a href="projects.html" class="project-tile" data-project
+           data-img="images/project-four-seasons.jpg" data-title="Four Seasons Hotel" data-city="Jeddah"
+           data-cat="Hospitality" data-sector="Hospitality"
+           data-scope="Facade, windows &amp; architectural systems"
+           data-desc="A five-star landmark on the Jeddah waterfront. NAFCO engineered the hotel's aluminium facade, windows and architectural systems — meeting the exacting finish, acoustic and weather-performance standards of luxury hospitality.">
             <span class="project-tile-bg" style="background-image:url('images/project-four-seasons.jpg')"></span>
             <span class="project-tile-info">
                 <span class="project-tile-city">Jeddah</span>
@@ -233,6 +249,23 @@
         </a>
     </div>
 </section>
+
+<!-- ============ PROJECT MODAL ============ -->
+<div class="project-modal" id="project-modal" aria-hidden="true" data-labels="Location|Sector|Scope">
+    <div class="pm-overlay" data-pm-close></div>
+    <div class="pm-dialog" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+        <button class="pm-close" type="button" data-pm-close aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="pm-image"><img id="pm-img" src="" alt=""></div>
+        <div class="pm-body">
+            <div class="pm-meta"><span class="pm-city" id="pm-city"></span><span class="pm-cat" id="pm-cat"></span></div>
+            <h3 class="pm-title" id="pm-title"></h3>
+            <p class="pm-desc" id="pm-desc"></p>
+            <div class="pm-specs" id="pm-specs"></div>
+        </div>
+    </div>
+</div>
 
 <!-- ============ COMPETITIVE ADVANTAGES ============ -->
 <section class="advantages-section">
